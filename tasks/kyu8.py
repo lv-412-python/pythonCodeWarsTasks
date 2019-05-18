@@ -13,6 +13,7 @@ OFFSET = 3.4680
 ONE_IMP_GALLON_IN_LITERS = 4.54609188
 ONE_MILE_IN_KILOMETERS = 1.606344
 
+
 def volume_of_a_cuboid(length, width, height):
     """Calculate volume of a cuboid.
 
@@ -24,6 +25,7 @@ def volume_of_a_cuboid(length, width, height):
 
     """
     return length * width * height
+
 
 def heads_legs(heads, legs):
     """
@@ -127,6 +129,7 @@ def square_or_square_root(arr):
             result.append(int(element*element))
     return result
 
+
 def miles_per_gallon_to_kilometers_per_liter(miles_per_gallon):
     """Convert miles per imperial gallon into kilometers per liter.
 
@@ -137,3 +140,19 @@ def miles_per_gallon_to_kilometers_per_liter(miles_per_gallon):
     """
     converted_value = miles_per_gallon * ONE_MILE_IN_KILOMETERS / ONE_IMP_GALLON_IN_LITERS
     return round(converted_value, 2)
+
+
+def divisible_by(array, divisor):
+    """
+        Returns a list of numbers which are divisible by given number
+
+        :param array: list: The list of numbers to be checked
+        :param divisor: int: The divisor
+
+        :return: list: The return value
+    """
+    return_list = list()
+    for i in array:
+        if i % divisor == 0:
+            return_list.append(i)
+    return return_list
