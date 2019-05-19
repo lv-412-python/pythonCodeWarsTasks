@@ -18,7 +18,7 @@ def example(first, second):
     return first + second
 
 
-class Circle(object):
+class Circle:
     """
     A class used to represent a Circle
     """
@@ -47,7 +47,7 @@ class Circle(object):
         return self._radius
 
 
-class Point(object):
+class Point:
     """
     A class used to represent a Point
     """
