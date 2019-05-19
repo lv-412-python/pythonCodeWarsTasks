@@ -184,6 +184,7 @@ def run_triple_shiftian():
         print("Wrong input! All variables should be integers.")
     print(triple_shiftian(first_three_elements, num))
 
+
 def run_second_8kyu_task():
     """Run square_or_square_root function"""
     try:
@@ -192,6 +193,7 @@ def run_second_8kyu_task():
         print(square_or_square_root(input_list))
     except ValueError:
         print("You must enter only numbers.")
+
 
 def run_replicate():
     """Run replicate function"""
@@ -202,10 +204,12 @@ def run_replicate():
     except ValueError:
         print("You must input only numbers.")
 
+
 def run_nba_cup():
     """Run nba_cup function"""
     team = input('Enter the name of the team:   ')
     print(nba_cup(R, team))
+
 
 if __name__ == '__main__':
     run_sls()
