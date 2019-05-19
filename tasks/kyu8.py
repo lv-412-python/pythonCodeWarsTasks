@@ -23,6 +23,7 @@ def short_long_short(first, second):
         return ''.join(second + first + second)
     return ''.join(first + second + first)
 
+
 def litres(time):
     """
     Calculates needed amount of water
@@ -31,6 +32,7 @@ def litres(time):
     """
     return int(time/2)
 
+
 def starting_mark(height):
     """
     calculate best starting mark
@@ -38,6 +40,7 @@ def starting_mark(height):
     :return : float : best strting mark based on height
     """
     return round(height*LINEAR_RELATION+OFFSET, 2)
+
 
 def duty_free(price: int, discount: int, holiday_cost: int) -> int:
     """
@@ -56,6 +59,7 @@ def duty_free(price: int, discount: int, holiday_cost: int) -> int:
     price = int(price)
     return price
 
+
 def validate_usr(username: str) -> bool:
     """
     Check your username for correctness
@@ -67,6 +71,7 @@ def validate_usr(username: str) -> bool:
 
     return False
 
+
 def fix_the_meerkat(arr):
     """
     Change the order of elements in list
@@ -77,6 +82,7 @@ def fix_the_meerkat(arr):
     arr[0] = arr[2]
     arr[2] = tail
     return arr
+
 
 def square_or_square_root(arr):
     """

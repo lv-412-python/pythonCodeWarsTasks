@@ -1,3 +1,4 @@
+
 # -*- coding: utf-8 -*-
 """Task solution:
    https://www.codewars.com/kata/floating-point-approximation-ii
@@ -6,6 +7,23 @@ from math import sin, cos, floor
 import re
 
 WINDOW = 1.5
+
+
+def find_nb(volume):
+    """
+    Calculates the number of n cubes from building's volume
+
+    :param volume : int : The volume of a building
+    :return int: number of cubes
+    """
+    vol = 0
+    amount = 1
+    while vol != volume:
+        vol += amount**3
+        amount += 1
+        if vol > volume:
+            return -1
+    return amount - 1
 
 
 def bouncing_ball(height, bounce):
@@ -136,6 +154,7 @@ R = ("Los Angeles Clippers 104 Dallas Mavericks 88,"
      "Boston Celtics 111 Brooklyn Nets 105,"
      "Charlotte Hornets 94 Chicago Bulls 86,"
      "Cleveland Cavaliers 103 Dallas Mavericks 97")
+
 
 def nba_cup(result_sheet, to_find):
     """
