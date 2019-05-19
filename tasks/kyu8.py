@@ -3,14 +3,20 @@
    http://google.github.io/styleguide/pyguide.html
 
 """
-def fix_the_meerkat(arr):
+
+def square_or_square_root(arr):
     """
     Args:
-        arr (list): The list of parts of the body.
+        arr (list): The list of numbers.
     Returns:
-        arr (list): Ordered list of parts of the body.
+        arr (list): If the number has an integer square root,
+        take this, otherwise square the number.
     """
-    tail = arr[0]
-    arr[0] = arr[2]
-    arr[2] = tail
-    return arr
+    result = []
+    for num in arr:
+        root = num**0.5
+        if root.is_integer():
+            result.append(int(root))
+        else:
+            result.append(int(num*num))
+    return result
