@@ -1,11 +1,10 @@
 """ToDo."""
-from tasks.kyu7 import replicate
+from tasks.kyu6 import nba_cup, r
 
 
-def run_example1():
+def run_examplee():
     """ToDo"""
-    print(replicate(3, 5))
-    print(replicate(5, 1))
+    print(nba_cup(r, "Boston Celtics"))
 
 if __name__ == '__main__':
-    run_example1()
+    run_examplee()
