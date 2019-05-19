@@ -65,3 +65,20 @@ def replicate(times, number):
         return [number]
     list_of_nums = [number]
     return list_of_nums + replicate(times-1, number)
+
+def where_is_vasya(total, in_front):
+    """Vasya stands in line with number of people p (including Vasya),
+    but he doesn't know exactly which position he occupies.
+    He can say that there are no less than b people standing in front of him
+    and no more than a people standing behind him.
+    Find the number of different positions Vasya can occupy.
+
+    :param total: int : Total amount of people in the line.
+    :param in_front: int : Number of people standing in front of him (no less than).
+
+    :return: int: Number of possible positions.
+
+    """
+    positions = total - in_front
+
+    return positions
