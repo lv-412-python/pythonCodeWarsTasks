@@ -16,7 +16,8 @@ from tasks.kyu8 import (
     fix_the_meerkat,
     square_or_square_root,
     heads_legs,
-    volume_of_a_cuboid
+    volume_of_a_cuboid,
+    miles_per_gallon_to_kilometers_per_liter
     )
 from tasks.kyu6 import (
     interp,
@@ -283,6 +284,14 @@ def calculate_volume():
     except (ValueError, NameError):
         print("Input value must be a number")
 
+def make_conversion():
+    """Run conversion from miles per gallon into kilometers per liter."""
+    try:
+        miles_per_g = float(input("miles per imperial gallon: "))
+        print(miles_per_gallon_to_kilometers_per_liter(miles_per_g))
+    except (ValueError, NameError):
+        print("Input value must be a number")
+
 
 if __name__ == '__main__':
     run_sls()
@@ -306,3 +315,4 @@ if __name__ == '__main__':
     run_replicate()
     run_nba_cup()
     run_zeros()
+    make_conversion()
