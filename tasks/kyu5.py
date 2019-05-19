@@ -4,6 +4,7 @@
 """
 RUNNERS = 5
 NUMBERS_OF_LETTERS_IN_THE_ALPHABET = 26
+
 def fib(num):
     """
     Finds n-th element from a Fibonacci sequence.
@@ -124,4 +125,3 @@ def artificial_rain(garden):
         if garden[i] >= garden[i - 1] and garden[i] >= garden[i + 1]:
             result_arr.append(desc(garden[i - 1::-1]) + desc(garden[i:]))
     return max(result_arr)
-    

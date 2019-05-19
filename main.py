@@ -1,9 +1,8 @@
 """ToDo."""
 from tasks.kyu5 import fib_product, moving_shift, demoving_shift, artificial_rain
-from tasks.kyu8 import short_long_short, litres, starting_mark
+from tasks.kyu8 import short_long_short, litres, starting_mark, duty_free
 from tasks.kyu6 import interp, approximation
 from tasks.kyu7 import sum_of_square, sequence_sum
-
 
 
 def run_fib_product():
@@ -25,7 +24,6 @@ def run_sum_of_square():
     except ValueError:
         print('Please enter integer')
 
-
 def run_litres():
     """ run litres """
     try:
@@ -33,7 +31,6 @@ def run_litres():
         print(litres(time))
     except ValueError:
         print("Wrong input!")
-
 
 def run_interp():
     """ This function is entry point of program"""
@@ -104,6 +101,17 @@ def run_artificial_rain():
     except ValueError:
         print('Wrong input!')
 
+def run_duty_free():
+    """ This function is entry point of program"""
+    try:
+        price = int(input("Price is: "))
+        discount = int(input("Discount is: "))
+        holiday_cost = int(input("Holiday cost is: "))
+        print('You can buy {} bottles of whiskey:D'.format(
+            duty_free(price, discount, holiday_cost)))
+    except ValueError:
+        print('Please enter number!')
+
 if __name__ == '__main__':
 
     run_sls()
@@ -116,4 +124,4 @@ if __name__ == '__main__':
     run_sequence_sum()
     run_approximation()
     run_artificial_rain()
-    
+    run_duty_free()

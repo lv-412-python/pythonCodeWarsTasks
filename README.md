@@ -2,9 +2,12 @@
 
 |         |  Mykhailo Dovhanenko        |   |
 | -------------- |:-------------:| -----:|
-|   5-kyu | https://www.codewars.com/kata/first-variation-on-caesar-cipher |
-|   6-kyu | https://www.codewars.com/kata/floating-point-approximation-ii |
+
+|   8-kyu | https://www.codewars.com/kata/holiday-viii-duty-free |
 |   7-kyu | https://www.codewars.com/kata/easy-line |
+|   6-kyu | https://www.codewars.com/kata/floating-point-approximation-ii |
+|   5-kyu | https://www.codewars.com/kata/first-variation-on-caesar-cipher |
+
 
 |         |  Lev Sikyrynskyi        |   |
 | -------------- |:-------------:| -----:|
