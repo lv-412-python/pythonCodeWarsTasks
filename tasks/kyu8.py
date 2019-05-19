@@ -15,3 +15,12 @@ def example(first, second):
         int: The return value.
     """
     return first + second
+
+def litres(time):
+    """
+    calculate needed event of water
+
+    Args: time(float)
+    Returns : int
+    """
+    return int(time/2)
