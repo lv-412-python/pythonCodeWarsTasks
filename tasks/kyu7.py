@@ -1,10 +1,25 @@
 # -*- coding: utf-8 -*-
-"""Task solution:
+"""
+    Task solution:
    https://www.codewars.com/kata/easy-line
 """
 
+def triple_shiftian(first_three_elements, num):
+    """
+    Finds the n-th element from Triple Shiftian.
+    :param first_three_elements: list : list with first three elements of Triple Shiftian.
+    :param num: int : sequence number, we want to finds value of.
+    :return: int : value of n-th element from Triple Shiftian.
+    """
+    shiftian = first_three_elements[:]
+    for i in range(2, num):
+        item = 4 * shiftian[i] - 5 * shiftian[i - 1] + 3 * shiftian[i - 2]
+        shiftian.append(item)
+    return shiftian[-1]
+
 def sum_of_square(line_number: int) -> int:
-    """ calculate the sum of the squares of the binomial coefficients
+    """
+    Calculate the sum of the squares of the binomial coefficients
     :param line_number : int : the line number
     :returns : int : the sum of the squares of the binomial coefficients on line n.
     """
@@ -25,7 +40,7 @@ def sum_of_square(line_number: int) -> int:
 
 def sequence_sum(begin_number, end_number, step):
     """
-    calculate sum of sequence
+    Calculate sum of sequence
     :param begin_number: int : start of sequence
     :param end_number: int : end of sequence
     :param step: int : step
