@@ -20,7 +20,8 @@ from tasks.kyu6 import (
     )
 from tasks.kyu7 import (
     sum_of_square,
-    sequence_sum
+    sequence_sum,
+    triple_shiftian
     )
 
 
@@ -166,6 +167,21 @@ def run_fix_the_meerkat():
     print(fix_the_meerkat(["tail", "body", "head"]))
 
 
+def run_triple_shiftian():
+    """
+    Runs triple_shiftian function.
+    """
+    first_three_elements = list()
+    try:
+        first_three_elements.append(int(input("Enter 1st element of Triple Shiftian: ")))
+        first_three_elements.append(int(input("Enter 2nd element of Triple Shiftian: ")))
+        first_three_elements.append(int(input("Enter 3rd element of Triple Shiftian: ")))
+        num = int(input("Enter sequence number: "))
+    except ValueError:
+        print("Wrong input! All variables should be integers.")
+    print(triple_shiftian(first_three_elements, num))
+
+
 if __name__ == '__main__':
     run_sls()
     run_moving_shift()
@@ -181,3 +197,4 @@ if __name__ == '__main__':
     run_validate_usr()
     run_fix_the_meerkat()
     run_bouncing_ball()
+    run_triple_shiftian()
