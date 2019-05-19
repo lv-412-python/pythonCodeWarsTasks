@@ -28,7 +28,8 @@ from tasks.kyu7 import (
     sum_of_square,
     sequence_sum,
     triple_shiftian,
-    replicate
+    replicate,
+    where_is_vasya
     )
 
 
@@ -256,6 +257,15 @@ def calculate_variance_of_rainfall():
         print(variance_rainfall(town, strng))
     except (ValueError, NameError):
         print("Input values must be a 'str' type and in quotation marks")
+
+def find_vasya():
+    """Find a number of possible positions Vasya can ocupy."""
+    try:
+        total = int(input("number of people in line: "))
+        in_front = int(input("in front of Vasya (no less than): "))
+        print(where_is_vasya(total, in_front))
+    except (ValueError, NameError):
+        print("Input value must be an integer value")
 
 if __name__ == '__main__':
     run_sls()
