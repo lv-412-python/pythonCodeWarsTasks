@@ -21,7 +21,8 @@ from tasks.kyu6 import (
     interp,
     approximation,
     bouncing_ball,
-    nba_cup, R
+    nba_cup, R,
+    variance_rainfall
     )
 from tasks.kyu7 import (
     sum_of_square,
@@ -247,6 +248,14 @@ def find_primes():
     except (ValueError, NameError):
         print("Input value must be an integer number")
 
+def calculate_variance_of_rainfall():
+    """Calculates variance of rainfall in the city."""
+    try:
+        town = str(input("Place: "))
+        strng = str(input("Average rainfall per month (with '\n' separator): "))
+        print(variance_rainfall(town, strng))
+    except (ValueError, NameError):
+        print("Input values must be a 'str' type and in quotation marks")
 
 if __name__ == '__main__':
     run_sls()

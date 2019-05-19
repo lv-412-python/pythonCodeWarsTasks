@@ -1,4 +1,3 @@
-
 # -*- coding: utf-8 -*-
 """Task solution:
    https://www.codewars.com/kata/floating-point-approximation-ii
@@ -205,3 +204,37 @@ def nba_cup(result_sheet, to_find):
     Scored={scored};\
     Conceded={conceded};\
     Points={points}'
+
+def mean_rainfall(strng):
+    """Calculate mean value of rainfall in the city.
+
+    :param strng: str : String with rainfall records for months from January to December.
+    The records of towns are separated by \n.
+
+    :return: float : Mean value of rainfall.
+
+    """
+    data = strng.split('\n')
+    data = [float(x) for x in data]
+
+    return sum(data) / len(data)
+
+def variance_rainfall(town, strng):
+    """Calculate variance of rainfall in the city.
+
+    :param town: str : Name of the location.
+    :param strng: str : String with rainfall records for months from January to December.
+    The records of towns are separated by \n.
+
+    :return: str: Variance of rainfall.
+
+    """
+    data = strng.split('\n')
+    data = [float(x) for x in data]
+
+    result = 0
+    for value in data:
+        result += pow(value - mean_rainfall(strng), 2)
+
+    result /= len(data)
+    return town + ": " + result

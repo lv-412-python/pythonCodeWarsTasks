@@ -35,6 +35,7 @@
 |   5-kyu | https://www.codewars.com/kata/product-of-consecutive-fib-numbers/python |
 
 
-|    |         Iryna Pavliv          |    |
-|------|:------------------:|-----------------:|
-|5-kyu |https://www.codewars.com/kata/gap-in-primes | 
+|   |                   Iryna Pavliv           |      |
+|------|:-----------------:|------------------:|
+|6-kyu |https://www.codewars.com/kata/rainfall |
+|5-kyu |https://www.codewars.com/kata/gap-in-primes |
