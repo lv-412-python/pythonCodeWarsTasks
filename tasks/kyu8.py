@@ -3,15 +3,14 @@
    http://google.github.io/styleguide/pyguide.html
 
 """
-
-
-def example(first, second):
-    """calculate sum a, b.
-    Args:
-        first (int): The first parameter.
-        second (int): The second parameter.
-
-    Returns:
-        int: The return value.
+def fix_the_meerkat(arr):
     """
-    return first + second
+    Args:
+        arr (list): The list of parts of the body.
+    Returns:
+        arr (list): Ordered list of parts of the body.
+    """
+    tail = arr[0]
+    arr[0] = arr[2]
+    arr[2] = tail
+    return arr

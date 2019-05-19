@@ -1,12 +1,11 @@
 """ToDo."""
-from tasks.kyu8 import example
+from tasks.kyu8 import fix_the_meerkat
 
 
 def run_example():
     """ToDo"""
-    first = input("a: ")
-    second = input("b: ")
-    print(example(first, second))
+    print(fix_the_meerkat(["tail", "body", "head"]))
+    print(fix_the_meerkat(["bottom", "middle", "top"]))
 
 if __name__ == '__main__':
     run_example()
