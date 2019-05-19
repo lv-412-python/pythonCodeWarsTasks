@@ -1,6 +1,11 @@
 """ToDo."""
+from tasks.kyu8_2 import validate_usr
 from tasks.kyu8 import short_long_short
 
+def main():
+    """ THis function is entry point of program"""
+    username = str(input("Enter your username: "))
+    print((validate_usr(username)))
 
 def run_sls():
     """
@@ -16,4 +21,5 @@ def run_sls():
 
 
 if __name__ == '__main__':
+    main()
     run_sls()
