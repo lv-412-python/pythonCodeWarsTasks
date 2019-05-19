@@ -15,7 +15,8 @@ from tasks.kyu8 import (
     validate_usr,
     fix_the_meerkat,
     square_or_square_root,
-    heads_legs
+    heads_legs,
+    volume_of_a_cuboid
     )
 from tasks.kyu6 import (
     interp,
@@ -266,6 +267,16 @@ def find_vasya():
         print(where_is_vasya(total, in_front))
     except (ValueError, NameError):
         print("Input value must be an integer value")
+
+def calculate_volume():
+    """Run calculation pf a volume of a cuboid."""
+    try:
+        length = float(input("length: "))
+        width = float(input("width: "))
+        height = float(input("height: "))
+        print(volume_of_a_cuboid(length, width, height))
+    except (ValueError, NameError):
+        print("Input value must be a number")
 
 if __name__ == '__main__':
     run_sls()

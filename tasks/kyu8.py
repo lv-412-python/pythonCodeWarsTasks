@@ -11,6 +11,17 @@ MAX_USERNAME_LENGHT = 16
 LINEAR_RELATION = 3.9355
 OFFSET = 3.4680
 
+def volume_of_a_cuboid(length, width, height):
+    """Calculate volume of a cuboid.
+
+    :param length : float : Length of a cuboid.
+    :param width: float : Width of a cuboid.
+    :param height :float : Height of a cuboid.
+
+    :return: float : Volume of a cuboid (length * width * height).
+
+    """
+    return length * width * height
 
 def heads_legs(heads, legs):
     """

@@ -35,8 +35,9 @@
 |   5-kyu | https://www.codewars.com/kata/product-of-consecutive-fib-numbers/python |
 
 
-|    |      Iryna Pavliv        |     |
-|------|:----------------:|-----------------:|
+|    |         Iryna Pavliv             |    |
+|------|:-------------:|---------------:|
+|8-kyu |https://www.codewars.com/kata/volume-of-a-cuboid   |
 |7-kyu |https://www.codewars.com/kata/where-is-vasya   |
 |6-kyu |https://www.codewars.com/kata/rainfall |
 |5-kyu |https://www.codewars.com/kata/gap-in-primes |
