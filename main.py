@@ -232,6 +232,7 @@ def run_triple_shiftian():
     except ValueError:
         print("Wrong input! All variables should be integers.")
 
+
 def run_zeros():
     """Run zeros function"""
     try:
@@ -239,6 +240,7 @@ def run_zeros():
         print(zeros(number))
     except ValueError:
         print("You should enter number.")
+
 
 def find_primes():
     """Run gap_in_primes function."""
@@ -250,6 +252,7 @@ def find_primes():
     except (ValueError, NameError):
         print("Input value must be an integer number")
 
+
 def calculate_variance_of_rainfall():
     """Calculates variance of rainfall in the city."""
     try:
@@ -258,6 +261,7 @@ def calculate_variance_of_rainfall():
         print(variance_rainfall(town, strng))
     except (ValueError, NameError):
         print("Input values must be a 'str' type and in quotation marks")
+
 
 def find_vasya():
     """Find a number of possible positions Vasya can ocupy."""
@@ -268,6 +272,7 @@ def find_vasya():
     except (ValueError, NameError):
         print("Input value must be an integer value")
 
+
 def calculate_volume():
     """Run calculation pf a volume of a cuboid."""
     try:
@@ -277,6 +282,7 @@ def calculate_volume():
         print(volume_of_a_cuboid(length, width, height))
     except (ValueError, NameError):
         print("Input value must be a number")
+
 
 if __name__ == '__main__':
     run_sls()
