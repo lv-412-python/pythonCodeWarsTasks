@@ -2,6 +2,8 @@
 from tasks.kyu5 import fib_product, moving_shift, demoving_shift
 from tasks.kyu8 import short_long_short, litres
 from tasks.kyu6 import interp
+from tasks.kyu7 import sum_of_square
+
 
 
 def run_fib_product():
@@ -13,6 +15,16 @@ def run_fib_product():
         print(fib_product(prod))
     except ValueError:
         print("Wrong input!")
+
+def run_sum_of_square():
+    """ THis function is entry point of program"""
+    try:
+        binomial_coefficients = int(input("Enter your binomial coefficients: "))
+        print('Your sum of the squares: {}'.format(
+            sum_of_square(binomial_coefficients)))
+    except ValueError:
+        print('Please enter integer')
+
 
 def run_litres():
     """ run litres """
@@ -56,9 +68,12 @@ def run_moving_shift():
         print('Your decrypted message: {}'.format(demoving_shift(encrypted_message, shift)))
     except ValueError:
         print('Please check input value ')
+
 if __name__ == '__main__':
+
     run_sls()
     run_moving_shift()
     run_fib_product()
     run_interp()
     run_litres()
+    run_sum_of_square()
