@@ -1,3 +1,8 @@
+# -*- coding: utf-8 -*-
+"""Example Google style docstrings.
+   http://google.github.io/styleguide/pyguide.html
+
+"""
 import math
 
 
