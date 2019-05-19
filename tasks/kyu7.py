@@ -3,6 +3,7 @@
     Task solution:
    https://www.codewars.com/kata/easy-line
 """
+from math import ceil
 
 
 def series_sum(nth_num):
@@ -100,3 +101,18 @@ def where_is_vasya(total, in_front):
     positions = total - in_front
 
     return positions
+
+
+def new_avg(arr, navg):
+    """
+    Function find expected number that will permit to reach the average navg.
+    :param arr: list : array of numbers.
+    :param navg: int : expected average.
+    :return: int : positive number.
+    :raise: ValueError : if 'num' is negative.
+    """
+    num = navg*(len(arr)+1) - sum(arr)
+    if num < 0:
+        raise ValueError
+
+    return ceil(num)
