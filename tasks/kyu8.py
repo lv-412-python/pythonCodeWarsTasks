@@ -34,7 +34,7 @@ def divisible_by(array, divisor):
     return return_list
 
 
-class Circle:
+class Circle(object):
     """
     A class used to represent a Circle
     """
@@ -63,33 +63,33 @@ class Circle:
         return self._radius
 
 
-class Point:
+class Point(object):
     """
     A class used to represent a Point
     """
 
-    def __init__(self, x, y):
+    def __init__(self, x_num, y_num):
         """
         Args:
-            x (int or float): The first parameter
-            y (int or float): The second parameter
+            x_num (int or float): The first parameter
+            y_num (int or float): The second parameter
         """
-        self._x = x
-        self._y = y
+        self._x_point = x_num
+        self._y_point = y_num
 
     @property
-    def x(self):
+    def x_point(self):
         """
         returns: int or float
         """
-        return self.x
+        return self._x_point
 
     @property
-    def y(self):
+    def y_point(self):
         """
         returns: int or float
         """
-        return self.y
+        return self._y_point
 
 
 def circle_area(circle):
