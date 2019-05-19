@@ -17,7 +17,8 @@ from tasks.kyu8 import (
     square_or_square_root,
     heads_legs,
     volume_of_a_cuboid,
-    miles_per_gallon_to_kilometers_per_liter
+    miles_per_gallon_to_kilometers_per_liter,
+    am_i_wilson
     )
 from tasks.kyu6 import (
     interp,
@@ -284,6 +285,7 @@ def calculate_volume():
     except (ValueError, NameError):
         print("Input value must be a number")
 
+
 def make_conversion():
     """Run conversion from miles per gallon into kilometers per liter."""
     try:
@@ -292,6 +294,14 @@ def make_conversion():
     except (ValueError, NameError):
         print("Input value must be a number")
 
+
+def run_am_i_wilson():
+    """Run am_i_wilson function."""
+    try:
+        number = int(input("Number: "))
+        print(am_i_wilson(number))
+    except (NameError, ValueError):
+        print("You must enter a number.")
 
 if __name__ == '__main__':
     run_sls()
@@ -316,3 +326,4 @@ if __name__ == '__main__':
     run_nba_cup()
     run_zeros()
     make_conversion()
+    run_am_i_wilson()

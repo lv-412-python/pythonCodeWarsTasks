@@ -156,3 +156,13 @@ def divisible_by(array, divisor):
         if i % divisor == 0:
             return_list.append(i)
     return return_list
+
+
+def am_i_wilson(number):
+    """Check if number is wilson prime.
+    Args:
+        number: number for checking.
+    Returns:
+        bool: True for wilson primes.
+    """
+    return number in (5, 13, 563)
