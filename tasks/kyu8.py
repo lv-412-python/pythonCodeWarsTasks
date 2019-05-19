@@ -16,11 +16,14 @@ def example(first, second):
     """
     return first + second
 
-def litres(time):
+def starting_mark(height):
     """
-    calculate needed event of water
-
-    Args: time(float)
-    Returns : int
+    Calculate needed starting_mark
+    Args:
+         height(float)
+    Returns:
+	 float
     """
-    return int(time/2)
+    linear_relation = 3.9355
+    offset = 3.4680
+    return round(height*linear_relation+offset, 2)
