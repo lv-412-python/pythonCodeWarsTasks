@@ -4,7 +4,7 @@
 """
 import re
 
-ALLOWED_CHARACTERS_PATTERN = '^[a-z0-9]\S*$'
+ALLOWED_CHARACTERS_PATTERN = r'^[a-z0-9]\S*$'
 MIN_USERNAME_LENGHT = 4
 MAX_USERNAME_LENGHT = 16
 
@@ -16,11 +16,6 @@ def validate_usr(username: str) -> bool:
         bool: The return True or False.
     """
     if MIN_USERNAME_LENGHT <= len(username) < MAX_USERNAME_LENGHT:
-        result = re.search(ALLOWED_CHARACTERS_PATTERN, username)
-        if result:
-            return True
-        else:
-            return False
+        return bool(re.search(ALLOWED_CHARACTERS_PATTERN, username))
 
-    else:
-        return False
+    return False
