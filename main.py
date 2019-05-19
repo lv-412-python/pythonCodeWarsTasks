@@ -32,7 +32,8 @@ from tasks.kyu7 import (
     sequence_sum,
     triple_shiftian,
     replicate,
-    where_is_vasya
+    where_is_vasya,
+    new_avg
     )
 
 
@@ -303,6 +304,16 @@ def run_am_i_wilson():
     except (NameError, ValueError):
         print("You must enter a number.")
 
+
+def run_new_avg():
+    """Run new_avg function."""
+    try:
+        arr = input("Array: ")
+        navg = int(input("Expected average: "))
+        print(new_avg(arr, navg))
+    except (NameError, ValueError):
+        print("You must enter a number.")
+
 if __name__ == '__main__':
     run_sls()
     run_moving_shift()
@@ -327,3 +338,4 @@ if __name__ == '__main__':
     run_zeros()
     make_conversion()
     run_am_i_wilson()
+    run_new_avg()
