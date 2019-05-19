@@ -1,5 +1,6 @@
 """ToDo."""
 from tasks.kyu8 import example
+from tasks.kyu5 import solve
 
 
 def run_example():
@@ -8,5 +9,14 @@ def run_example():
     second = input("b: ")
     print(example(first, second))
 
+
+def run_solve():
+    """Print x out of sequence 'x + 2x**2 + 3x**3 + .. + nx**n'"""
+    limit = float(input("Input a limit: "))
+    argument = solve(limit)
+    print("The argument is: {}".format(argument))
+
+
 if __name__ == '__main__':
     run_example()
+    run_solve()
