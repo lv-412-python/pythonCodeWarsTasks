@@ -10,6 +10,8 @@ MIN_USERNAME_LENGHT = 4
 MAX_USERNAME_LENGHT = 16
 LINEAR_RELATION = 3.9355
 OFFSET = 3.4680
+ONE_IMP_GALLON_IN_LITERS = 4.54609188
+ONE_MILE_IN_KILOMETERS = 1.606344
 
 def volume_of_a_cuboid(length, width, height):
     """Calculate volume of a cuboid.
@@ -124,3 +126,14 @@ def square_or_square_root(arr):
         else:
             result.append(int(element*element))
     return result
+
+def miles_per_gallon_to_kilometers_per_liter(miles_per_gallon):
+    """Convert miles per imperial gallon into kilometers per liter.
+
+    :param miles_per_gallon : float : The value to convert.
+
+    :return: float : Converted value rounded to two digits.
+
+    """
+    converted_value = miles_per_gallon * ONE_MILE_IN_KILOMETERS / ONE_IMP_GALLON_IN_LITERS
+    return round(converted_value, 2)
