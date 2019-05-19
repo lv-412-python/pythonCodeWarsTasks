@@ -5,6 +5,23 @@
 """
 
 
+def series_sum(nth_num):
+    """
+    Calculates the sum of the series upto nth term
+
+    :param nth_num: int: nth term of the series
+    :return: str: sum of the series
+    """
+    if nth_num == 0:
+        return format(0, '.2f')
+    series = 1
+    divisor = 4
+    for _ in range(0, nth_num - 1):
+        series += 1 / divisor
+        divisor += 3
+    return format(series, '.2f')
+
+
 def triple_shiftian(first_three_elements, num):
     """
     Finds the n-th element from Triple Shiftian.
@@ -65,6 +82,7 @@ def replicate(times, number):
         return [number]
     list_of_nums = [number]
     return list_of_nums + replicate(times-1, number)
+
 
 def where_is_vasya(total, in_front):
     """Vasya stands in line with number of people p (including Vasya),
