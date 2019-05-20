@@ -1,12 +1,12 @@
 """ToDo."""
-from tasks.kyu8 import example
+from tasks.kyu6 import nba_cup, R
 
 
-def run_example():
+def Run():
     """ToDo"""
-    first = input("a: ")
-    second = input("b: ")
-    print(example(first, second))
+    team = input('Enter the name of the team:   ')
+    print(nba_cup(R, team))
 
 if __name__ == '__main__':
-    run_example()
+    Run()
+
