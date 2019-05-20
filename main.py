@@ -1,10 +1,10 @@
 """ToDo."""
-from tasks.kyu6 import nba_cup, r
+from tasks.kyu5 import zeros
 
 
-def run_examplee():
+def run_example():
     """ToDo"""
-    print(nba_cup(r, "Boston Celtics"))
+    print(zeros(1000))
 
 if __name__ == '__main__':
-    run_examplee()
+    run_example()
