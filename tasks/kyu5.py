@@ -15,15 +15,15 @@ def desc(sub):
     result += 1
     return result
 
+
 def artificial_rain(garden):
     """ counts longest descending subsequence """
     result_arr = [1]
     if len(garden) == 1:
         return 1
-    else:
-        result_arr.append(desc(garden))
-        result_arr.append(desc(garden[::-1]))
-        for i in enumerate(garden[:-1]):
-            if garden[i[0]] >= garden[i[0]-1] and garden[i[0]] >= garden[i[0]+1]:
-                result_arr.append(desc(garden[i[0]-1::-1])+desc(garden[i[0]::]))
+    result_arr.append(desc(garden))
+    result_arr.append(desc(garden[::-1]))
+    for i in enumerate(garden[:-1]):
+        if garden[i[0]] >= garden[i[0] - 1] and garden[i[0]] >= garden[i[0] + 1]:
+            result_arr.append(desc(garden[i[0] - 1::-1]) + desc(garden[i[0]::]))
     return max(result_arr)
