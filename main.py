@@ -12,9 +12,12 @@ def run_example():
 
 def run_solve():
     """Print x out of sequence 'x + 2x**2 + 3x**3 + .. + nx**n'"""
-    limit = float(input("Input a limit: "))
-    argument = solve(limit)
-    print("The argument is: {}".format(argument))
+    try:
+        limit = float(input("Input a limit: "))
+        argument = solve(limit)
+        print("The argument is: {}".format(argument))
+    except ValueError:
+        print("Wrong input data")
 
 
 if __name__ == '__main__':
