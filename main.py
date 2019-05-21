@@ -1,5 +1,5 @@
 """ToDo."""
-from tasks.kyu5 import nba_cup, R
+from tasks.kyu6 import nba_cup, R
 
 
 def Run():
@@ -12,4 +12,3 @@ def Run():
 
 if __name__ == '__main__':
     Run()
-
