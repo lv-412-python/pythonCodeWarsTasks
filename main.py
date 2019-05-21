@@ -12,13 +12,16 @@ def run_example():
 
 def run_circle_area():
     """Prints the are of a circle"""
-    x_point = int(input('Input x: '))
-    y_point = int(input('Input y: '))
-    point = Point(x_point, y_point)
-    radius = int(input('Input radius: '))
-    circle = Circle(point, radius)
-    area = circle_area(circle)
-    print("The area of circle: {}".format(area))
+    try:
+        x_point = int(input('Input x: '))
+        y_point = int(input('Input y: '))
+        point = Point(x_point, y_point)
+        radius = int(input('Input radius: '))
+        circle = Circle(point, radius)
+        area = circle_area(circle)
+        print("The area of circle: {}".format(area))
+    except ValueError:
+        print("Wrong input data")
 
 
 if __name__ == '__main__':
