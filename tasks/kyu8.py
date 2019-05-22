@@ -2,7 +2,13 @@
 Implementation of short long short string concatenation.
 Task solution:
    https://www.codewars.com/kata/holiday-viii-duty-free
+   https://www.codewars.com/kata/simple-validation-of-a-username-with-regex
 """
+import re
+
+ALLOWED_CHARACTERS_PATTERN = r'^[a-z0-9]\S*$'
+MIN_USERNAME_LENGHT = 4
+MAX_USERNAME_LENGHT = 16
 LINEAR_RELATION = 3.9355
 OFFSET = 3.4680
 
@@ -45,3 +51,14 @@ def duty_free(price: int, discount: int, holiday_cost: int) -> int:
     price = holiday_cost / (price - price * discount)
     price = int(price)
     return price
+
+def validate_usr(username: str) -> bool:
+    """Check your username for correctness
+        :username : str : Your username.
+    Returns:
+        :returns : bool : The return True or False.
+    """
+    if MIN_USERNAME_LENGHT <= len(username) < MAX_USERNAME_LENGHT:
+        return bool(re.search(ALLOWED_CHARACTERS_PATTERN, username))
+
+    return False

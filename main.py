@@ -1,8 +1,25 @@
 """ToDo."""
-from tasks.kyu5 import fib_product, moving_shift, demoving_shift, artificial_rain
-from tasks.kyu8 import short_long_short, litres, starting_mark, duty_free
-from tasks.kyu6 import interp, approximation
-from tasks.kyu7 import sum_of_square, sequence_sum
+from tasks.kyu5 import (
+    fib_product,
+    moving_shift,
+    demoving_shift,
+    artificial_rain
+    )
+from tasks.kyu8 import (
+    short_long_short,
+    litres,
+    starting_mark,
+    duty_free,
+    validate_usr
+    )
+from tasks.kyu6 import (
+    interp,
+    approximation
+    )
+from tasks.kyu7 import (
+    sum_of_square,
+    sequence_sum
+    )
 
 
 def run_fib_product():
@@ -112,8 +129,13 @@ def run_duty_free():
     except ValueError:
         print('Please enter number!')
 
-if __name__ == '__main__':
+def run_validate_usr():
+    """ This function is entry point of program"""
 
+    username = str(input("Enter your username: "))
+    print((validate_usr(username)))
+
+if __name__ == '__main__':
     run_sls()
     run_moving_shift()
     run_fib_product()
@@ -125,3 +147,4 @@ if __name__ == '__main__':
     run_approximation()
     run_artificial_rain()
     run_duty_free()
+    run_validate_usr()
