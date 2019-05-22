@@ -1,5 +1,5 @@
 """ToDo."""
-from tasks.kyu5 import fib_product
+from tasks.kyu5 import fib_product, moving_shift, demoving_shift
 from tasks.kyu8 import short_long_short
 
 
@@ -26,6 +26,17 @@ def run_sls():
         second_str = input("Enter another string: ")
     print(short_long_short(first_str, second_str))
 
-
+def run_moving_shift():
+    """ This function is entry point of program"""
+    try:
+        plain_text = str(input('Enter your message: '))
+        shift = int(input('Enter shift: '))
+        encrypted_message = moving_shift(plain_text, shift)
+        print('Your encrypted message: {}'.format(encrypted_message))
+        print('Your decrypted message: {}'.format(demoving_shift(encrypted_message, shift)))
+    except ValueError:
+        print('Please check input value ')
 if __name__ == '__main__':
     run_sls()
+    run_moving_shift()
+    run_fib_product()

@@ -1,6 +1,9 @@
-"""Implementation of Fibonacci function and Fibonacci product function."""
-
-
+# -*- coding: utf-8 -*-
+"""Task solution:
+   https://www.codewars.com/kata/first-variation-on-caesar-cipher
+"""
+RUNNERS = 5
+NUMBERS_OF_LETTERS_IN_THE_ALPHABET = 26
 def fib(num):
     """
     Finds n-th element from a Fibonacci sequence.
@@ -34,3 +37,59 @@ def fib_product(product):
         return [fib1, fib2, True]
 
     return [fib1, fib2, False]
+
+def chunk_string(text: str, parts: int) -> list:
+    """divide by message length between the five runners.
+        :text : str : chipher text
+        :parts : int : shows how many parts you need to split the text
+        :returns : list : returns list with length which equal RUNNERS
+    """
+    res = [text[i:i+len(text)//parts+1] for i in range(0, len(text), len(text)//parts+1)]
+    return res
+
+def moving_shift(plain_text: str, shift: int) -> list:
+    """Search for some intermediate results.
+        :plain_text : str : input text which need to encrypt
+        :shift : int : number of places up or down the alphabet
+        :returns : list : returns list with length which equal RUNNERSs
+    """
+    chipher_text = ''
+    for letter in plain_text:
+        if letter.isalpha():
+            shift_letter = ord(letter)+shift
+            if shift_letter > ord('z'):
+                shift_letter -= NUMBERS_OF_LETTERS_IN_THE_ALPHABET
+            chipher_text += chr(shift_letter)
+        else:
+            chipher_text += letter
+
+    return chunk_string(chipher_text, RUNNERS)
+
+def stick_together(chunks_chipher_text: list) -> str:
+    """ Converts the list to string
+        :chunks_chipher_text : list : encrypted tex is divided into RUNNERS elements
+        :returns: str : returns full chipher text
+    """
+    chipher_text = ''
+    chipher_text = ''.join(chunks_chipher_text)
+
+    return chipher_text
+
+def demoving_shift(chunks_chipher_text: list, shift: int) -> str:
+    """ Decrypt chipher text
+        :chunks_chipher_text : list : results of work moving_shift
+        :shift : int : number of places up or down the alphabet
+        :returns : str : returns plain text
+    """
+    chipher_text = stick_together(chunks_chipher_text)
+    plain_text = ""
+    for letter in chipher_text:
+        if letter.isalpha():
+            shift_letter = ord(letter)-shift
+            if shift_letter > ord('z'):
+                shift_letter += NUMBERS_OF_LETTERS_IN_THE_ALPHABET
+            plain_text += chr(shift_letter)
+        else:
+            plain_text += letter
+
+    return plain_text
