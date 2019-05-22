@@ -25,9 +25,8 @@ class Circle:
 
     def __init__(self, point, radius):
         """
-        Args:
-            point (Point): The first parameter
-            radius (float): The second parameter
+        :param point: Point: object of type Circle
+        :param radius: int or float: the radius of the Circle
         """
         self._point = point
         self._radius = radius
@@ -35,14 +34,14 @@ class Circle:
     @property
     def point(self):
         """
-        returns: str
+        :returns: str
         """
         return self._point
 
     @property
     def radius(self):
         """
-        returns: float or int
+        :returns: float or int
         """
         return self._radius
 
@@ -54,9 +53,8 @@ class Point:
 
     def __init__(self, x_point, y_point):
         """
-        Args:
-            x_point (int or float): The first parameter
-            y_point (int or float): The second parameter
+        :param x_point: int or float: The coordinate of x.
+        :param x_point: int or float: The coordinate of y.
         """
         self._x = x_point
         self._y = y_point
@@ -64,14 +62,14 @@ class Point:
     @property
     def x_point(self):
         """
-        returns: int or float
+        :returns: int or float
         """
         return self._x
 
     @property
     def y_point(self):
         """
-        returns: int or float
+        :returns: int or float
         """
         return self._y
 
@@ -79,10 +77,7 @@ class Point:
 def circle_area(circle):
     """"
     Calculates the area of a circle
-
-    Args:
-        circle (Circle)
-    Returns:
-        float: The return value
+    :param circle: Circle: object of type Circle.
+    :returns float: area of the circle.
     """
     return math.pi * circle.radius * circle.radius
