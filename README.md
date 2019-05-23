@@ -22,3 +22,5 @@
 | 8-kyu | https://www.codewars.com/kata/my-head-is-at-the-wrong-end |
 | 8-kyu | https://www.codewars.com/kata/to-square-root-or-not-to-square-root |
 | 7-kyu | https://www.codewars.com/kata/recursive-replication |
+| 6-kyu | https://www.codewars.com/kata/ranking-nba-teams |
+
