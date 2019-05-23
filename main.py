@@ -15,12 +15,25 @@ from tasks.kyu8 import (
     )
 from tasks.kyu6 import (
     interp,
-    approximation
+    approximation,
+    bouncing_ball
     )
 from tasks.kyu7 import (
     sum_of_square,
     sequence_sum
     )
+
+
+def run_bouncing_ball():
+    """
+    Runs bouncing_ball function.
+    """
+    try:
+        height = float(input("Enter height(must be greater than 1.5): "))
+        bounce = float(input("Enter bounce of the ball(between 0 and 1): "))
+        print(bouncing_ball(height, bounce))
+    except ValueError:
+        print("Wrong input!")
 
 
 def run_fib_product():
@@ -33,6 +46,7 @@ def run_fib_product():
     except ValueError:
         print("Wrong input!")
 
+
 def run_sum_of_square():
     """ THis function is entry point of program"""
     try:
@@ -42,6 +56,7 @@ def run_sum_of_square():
     except ValueError:
         print('Please enter integer')
 
+
 def run_litres():
     """ run litres """
     try:
@@ -49,6 +64,7 @@ def run_litres():
         print(litres(time))
     except ValueError:
         print("Wrong input!")
+
 
 def run_interp():
     """ This function is entry point of program"""
@@ -60,6 +76,7 @@ def run_interp():
         print('Your intermediate results: {}'.format(interp(func, l_a, u_b, n_c)))
     except ValueError:
         print('Please check input value ')
+
 
 def run_sls():
     """
@@ -73,6 +90,7 @@ def run_sls():
         second_str = input("Enter another string: ")
     print(short_long_short(first_str, second_str))
 
+
 def run_moving_shift():
     """ This function is entry point of program"""
     try:
@@ -84,6 +102,7 @@ def run_moving_shift():
     except ValueError:
         print('Please check input value ')
 
+
 def run_starting_mark():
     """ run starting_mark """
     try:
@@ -91,6 +110,7 @@ def run_starting_mark():
         print(starting_mark(height))
     except ValueError:
         print("Wrong input!")
+
 
 def run_sequence_sum():
     """ run sequence sum """
@@ -102,6 +122,7 @@ def run_sequence_sum():
     except ValueError:
         print("Wrong input!")
 
+
 def run_approximation():
     """ run approximation """
     try:
@@ -109,6 +130,7 @@ def run_approximation():
         print(approximation(number))
     except ValueError:
         print("Wrong input!")
+
 
 def run_artificial_rain():
     """ run artificial rain """
@@ -118,6 +140,7 @@ def run_artificial_rain():
         print(artificial_rain(garden))
     except ValueError:
         print('Wrong input!')
+
 
 def run_duty_free():
     """ This function is entry point of program"""
@@ -130,15 +153,18 @@ def run_duty_free():
     except ValueError:
         print('Please enter number!')
 
+
 def run_validate_usr():
     """ This function is entry point of program"""
 
     username = str(input("Enter your username: "))
     print((validate_usr(username)))
 
+
 def run_fix_the_meerkat():
     """Run fix_the_meerkat function"""
     print(fix_the_meerkat(["tail", "body", "head"]))
+
 
 if __name__ == '__main__':
     run_sls()
@@ -154,3 +180,4 @@ if __name__ == '__main__':
     run_duty_free()
     run_validate_usr()
     run_fix_the_meerkat()
+    run_bouncing_ball()
