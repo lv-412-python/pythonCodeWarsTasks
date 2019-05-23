@@ -11,7 +11,8 @@ from tasks.kyu8 import (
     starting_mark,
     duty_free,
     validate_usr,
-    fix_the_meerkat
+    fix_the_meerkat,
+    square_or_square_root
     )
 from tasks.kyu6 import (
     interp,
@@ -181,6 +182,15 @@ def run_triple_shiftian():
         print("Wrong input! All variables should be integers.")
     print(triple_shiftian(first_three_elements, num))
 
+def run_second_8kyu_task():
+    """Run square_or_square_root function"""
+    try:
+        input_ = input("Enter a sequence of numbers separated by a space: ")
+        input_list = [int(number) for number in input_.split(' ')]
+        print(square_or_square_root(input_list))
+    except ValueError:
+        print("You must enter only numbers.")
+
 
 if __name__ == '__main__':
     run_sls()
@@ -198,3 +208,4 @@ if __name__ == '__main__':
     run_fix_the_meerkat()
     run_bouncing_ball()
     run_triple_shiftian()
+    run_second_8kyu_task()
