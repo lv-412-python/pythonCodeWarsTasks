@@ -47,4 +47,17 @@ def sequence_sum(begin_number, end_number, step):
     :return: int : sum of sequence
     """
     return sum(list(range(begin_number, end_number+1, step)))
-    
+
+def replicate(times, number):
+    """
+    Function should return list containing repetitions of the number argument
+    :param: times: int : number of repetitions
+    :param: number: int : number that repeats
+    :return: arr list : list.
+    """
+    if times <= 0:
+        return []
+    if times == 1:
+        return [number]
+    list_of_nums = [number]
+    return list_of_nums + replicate(times-1, number)
