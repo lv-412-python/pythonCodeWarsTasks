@@ -11,10 +11,7 @@ MAX_USERNAME_LENGHT = 16
 LINEAR_RELATION = 3.9355
 OFFSET = 3.4680
 
-<<<<<<< HEAD
 
-def short_long_short(first, second):
-=======
 def heads_legs(heads, legs):
     """
     Finds the number of cows and chickens by being given the amount of heads and legs on the farm.
@@ -30,8 +27,7 @@ def heads_legs(heads, legs):
     return "No solutions."
 
 
-def short_long_short(first_str, second_str):
->>>>>>> added task kyu8 part2 and main.py.
+def short_long_short(first, second):
     """
     Concatenates strings in a specific order (short + long + short).
     :param first : string : just some string.
@@ -117,18 +113,3 @@ def square_or_square_root(arr):
         else:
             result.append(int(element*element))
     return result
-
-
-def heads_legs(heads, legs):
-    """
-    Finds the number of cows and chickens by being given the amount of heads and legs on the farm.
-    :param heads: int : amount of heads on the farm.
-    :param legs: int : amount of legs on the farm
-    :return: tuple : string : number of chickens and cows or string, when there is no solution.
-    """
-    for i in range(0, heads + 1):
-        cows = heads - i
-        if 4 * cows + 2 * i == legs:
-            chickens = i
-            return chickens, cows
-    return "No solutions."
