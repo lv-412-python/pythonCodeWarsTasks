@@ -2,7 +2,7 @@
 from tasks.kyu5 import fib_product, moving_shift, demoving_shift
 from tasks.kyu8 import short_long_short, litres, starting_mark
 from tasks.kyu6 import interp
-from tasks.kyu7 import sum_of_square
+from tasks.kyu7 import sum_of_square, sequence_sum
 
 
 
@@ -77,6 +77,15 @@ def run_starting_mark():
     except ValueError:
         print("Wrong input!")
 
+def run_sequence_sum():
+    """ run sequence sum """
+    try:
+        begin_number = int(input("enter start: "))
+        end_number = int(input("enter end: "))
+        step = int(input("enter step: "))
+        print(sequence_sum(begin_number, end_number, step))
+    except ValueError:
+        print("Wrong input!")
 
 if __name__ == '__main__':
 
@@ -87,3 +96,5 @@ if __name__ == '__main__':
     run_litres()
     run_sum_of_square()
     run_starting_mark()
+    run_sequence_sum()
+    
