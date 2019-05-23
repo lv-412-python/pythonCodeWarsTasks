@@ -1,5 +1,4 @@
 """ToDo."""
-<<<<<<< HEAD
 from tasks.kyu5 import (
     fib_product,
     moving_shift,
@@ -38,10 +37,6 @@ def run_bouncing_ball():
         height = float(input("Enter height(must be greater than 1.5): "))
         bounce = float(input("Enter bounce of the ball(between 0 and 1): "))
         print(bouncing_ball(height, bounce))
-=======
-from tasks.kyu5 import fib_product, moving_shift, demoving_shift
-from tasks.kyu7 import triple_shiftian
-from tasks.kyu8 import short_long_short, heads_legs
 
 
 def run_heads_legs():
@@ -56,7 +51,6 @@ def run_heads_legs():
             heads = int(input("Enter the amount of heads on the farm: "))
             legs = int(input("Enter the amount of legs on the farm: "))
         print(heads_legs(heads, legs))
->>>>>>> added task kyu8 part2 and main.py.
     except ValueError:
         print("Wrong input!")
 
@@ -254,7 +248,6 @@ if __name__ == '__main__':
     run_fib_product()
     run_triple_shiftian()
     run_heads_legs()
-<<<<<<< HEAD
     run_interp()
     run_litres()
     run_sum_of_square()
@@ -270,5 +263,3 @@ if __name__ == '__main__':
     run_second_8kyu_task()
     run_replicate()
     run_nba_cup()
-=======
->>>>>>> added task kyu8 part2 and main.py.
