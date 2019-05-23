@@ -1,6 +1,6 @@
 """ToDo."""
 from tasks.kyu5 import fib_product, moving_shift, demoving_shift
-from tasks.kyu8 import short_long_short
+from tasks.kyu8 import short_long_short, litres
 from tasks.kyu6 import interp
 
 
@@ -13,6 +13,15 @@ def run_fib_product():
         print(fib_product(prod))
     except ValueError:
         print("Wrong input!")
+
+def run_litres():
+    """ run litres """
+    try:
+        time = float(input("enter time: "))
+        print(litres(time))
+    except ValueError:
+        print("Wrong input!")
+
 
 def run_interp():
     """ This function is entry point of program"""
@@ -52,3 +61,4 @@ if __name__ == '__main__':
     run_moving_shift()
     run_fib_product()
     run_interp()
+    run_litres()
