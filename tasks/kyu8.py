@@ -62,3 +62,14 @@ def validate_usr(username: str) -> bool:
         return bool(re.search(ALLOWED_CHARACTERS_PATTERN, username))
 
     return False
+
+def fix_the_meerkat(arr):
+    """
+    Change the order of elements in list
+    :param: arr: list : The list of parts of the body.
+    :return: arr list : List of parts of the body in correct order
+    """
+    tail = arr[0]
+    arr[0] = arr[2]
+    arr[2] = tail
+    return arr

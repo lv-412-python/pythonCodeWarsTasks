@@ -10,7 +10,8 @@ from tasks.kyu8 import (
     litres,
     starting_mark,
     duty_free,
-    validate_usr
+    validate_usr,
+    fix_the_meerkat
     )
 from tasks.kyu6 import (
     interp,
@@ -135,6 +136,10 @@ def run_validate_usr():
     username = str(input("Enter your username: "))
     print((validate_usr(username)))
 
+def run_fix_the_meerkat():
+    """Run fix_the_meerkat function"""
+    print(fix_the_meerkat(["tail", "body", "head"]))
+
 if __name__ == '__main__':
     run_sls()
     run_moving_shift()
@@ -148,3 +153,4 @@ if __name__ == '__main__':
     run_artificial_rain()
     run_duty_free()
     run_validate_usr()
+    run_fix_the_meerkat()
