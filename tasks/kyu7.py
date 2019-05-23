@@ -4,6 +4,7 @@
    https://www.codewars.com/kata/easy-line
 """
 
+
 def triple_shiftian(first_three_elements, num):
     """
     Finds the n-th element from Triple Shiftian.
@@ -16,6 +17,7 @@ def triple_shiftian(first_three_elements, num):
         item = 4 * shiftian[i] - 5 * shiftian[i - 1] + 3 * shiftian[i - 2]
         shiftian.append(item)
     return shiftian[-1]
+
 
 def sum_of_square(line_number: int) -> int:
     """
@@ -38,15 +40,17 @@ def sum_of_square(line_number: int) -> int:
         result += pow(pascal_triangle[line_number][i], 2)
     return result
 
+
 def sequence_sum(begin_number, end_number, step):
     """
-    Calculate sum of sequence
+    Calculates sum of sequence
     :param begin_number: int : start of sequence
     :param end_number: int : end of sequence
     :param step: int : step
     :return: int : sum of sequence
     """
     return sum(list(range(begin_number, end_number+1, step)))
+
 
 def replicate(times, number):
     """
