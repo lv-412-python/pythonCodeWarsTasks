@@ -12,7 +12,8 @@ from tasks.kyu8 import (
     duty_free,
     validate_usr,
     fix_the_meerkat,
-    square_or_square_root
+    square_or_square_root,
+    heads_legs
     )
 from tasks.kyu6 import (
     interp,
@@ -170,19 +171,20 @@ def run_fix_the_meerkat():
     print(fix_the_meerkat(["tail", "body", "head"]))
 
 
-def run_triple_shiftian():
+def run_heads_legs():
     """
-    Runs triple_shiftian function.
+    Runs heads_legs function.
     """
-    first_three_elements = list()
     try:
-        first_three_elements.append(int(input("Enter 1st element of Triple Shiftian: ")))
-        first_three_elements.append(int(input("Enter 2nd element of Triple Shiftian: ")))
-        first_three_elements.append(int(input("Enter 3rd element of Triple Shiftian: ")))
-        num = int(input("Enter sequence number: "))
+        heads = int(input("Enter the amount of heads on the farm: "))
+        legs = int(input("Enter the amount of legs on the farm: "))
+        while heads > 1000 or legs > 1000:
+            print("Wrong input! Both numbers must be positive integers not greater than 1000.")
+            heads = int(input("Enter the amount of heads on the farm: "))
+            legs = int(input("Enter the amount of legs on the farm: "))
+        print(heads_legs(heads, legs))
     except ValueError:
-        print("Wrong input! All variables should be integers.")
-    print(triple_shiftian(first_three_elements, num))
+        print("Wrong input!")
 
 
 def run_second_8kyu_task():
@@ -211,10 +213,27 @@ def run_nba_cup():
     print(nba_cup(R, team))
 
 
+def run_triple_shiftian():
+    """
+    Runs triple_shiftian function.
+    """
+    first_three_elements = list()
+    try:
+        first_three_elements.append(int(input("Enter 1st element of Triple Shiftian: ")))
+        first_three_elements.append(int(input("Enter 2nd element of Triple Shiftian: ")))
+        first_three_elements.append(int(input("Enter 3rd element of Triple Shiftian: ")))
+        num = int(input("Enter sequence number: "))
+        print(triple_shiftian(first_three_elements, num))
+    except ValueError:
+        print("Wrong input! All variables should be integers.")
+
+
 if __name__ == '__main__':
     run_sls()
     run_moving_shift()
     run_fib_product()
+    run_triple_shiftian()
+    run_heads_legs()
     run_interp()
     run_litres()
     run_sum_of_square()
