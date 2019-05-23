@@ -1,6 +1,6 @@
 """ToDo."""
 from tasks.kyu5 import fib_product, moving_shift, demoving_shift
-from tasks.kyu8 import short_long_short, litres
+from tasks.kyu8 import short_long_short, litres, starting_mark
 from tasks.kyu6 import interp
 from tasks.kyu7 import sum_of_square
 
@@ -69,6 +69,15 @@ def run_moving_shift():
     except ValueError:
         print('Please check input value ')
 
+def run_starting_mark():
+    """ run starting_mark """
+    try:
+        height = float(input("enter height: "))
+        print(starting_mark(height))
+    except ValueError:
+        print("Wrong input!")
+
+
 if __name__ == '__main__':
 
     run_sls()
@@ -77,3 +86,4 @@ if __name__ == '__main__':
     run_interp()
     run_litres()
     run_sum_of_square()
+    run_starting_mark()
