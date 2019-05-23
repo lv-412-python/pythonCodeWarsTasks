@@ -1,5 +1,5 @@
 """ToDo."""
-from tasks.kyu5 import fib_product, moving_shift, demoving_shift
+from tasks.kyu5 import fib_product, moving_shift, demoving_shift, artificial_rain
 from tasks.kyu8 import short_long_short, litres, starting_mark
 from tasks.kyu6 import interp, approximation
 from tasks.kyu7 import sum_of_square, sequence_sum
@@ -95,6 +95,15 @@ def run_approximation():
     except ValueError:
         print("Wrong input!")
 
+def run_artificial_rain():
+    """ run artificial rain """
+    try:
+        input_string = input("Enter a list element separated by space ")
+        garden = input_string.split()
+        print(artificial_rain(garden))
+    except ValueError:
+        print('Wrong input!')
+
 if __name__ == '__main__':
 
     run_sls()
@@ -106,3 +115,5 @@ if __name__ == '__main__':
     run_starting_mark()
     run_sequence_sum()
     run_approximation()
+    run_artificial_rain()
+    

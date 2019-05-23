@@ -93,3 +93,35 @@ def demoving_shift(chunks_chipher_text: list, shift: int) -> str:
             plain_text += letter
 
     return plain_text
+
+def desc(sub):
+    """
+    counts descending subsequence of passed array
+    :param sub: list : subsequence of garden
+    :return: int : length of descending sequence
+    """
+    result = 1
+    for i, _ in enumerate(sub):
+        if sub[i] <= sub[i - 1]:
+            result += 1
+        else:
+            break
+    return result
+
+
+def artificial_rain(garden):
+    """
+    counts longest descending subsequence
+    :param garden: list : your garden
+    :return: int : Best spot for artificial rain
+    """
+    result_arr = [1]
+    if len(garden) == 1:
+        return 1
+    result_arr.append(desc(garden))
+    result_arr.append(desc(garden[::-1]))
+    for i, _ in enumerate(garden[:-1]):
+        if garden[i] >= garden[i - 1] and garden[i] >= garden[i + 1]:
+            result_arr.append(desc(garden[i - 1::-1]) + desc(garden[i:]))
+    return max(result_arr)
+    
