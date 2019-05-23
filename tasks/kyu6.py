@@ -4,6 +4,29 @@
 """
 from math import sin, cos, floor
 
+WINDOW = 1.5
+
+
+def bouncing_ball(height, bounce):
+    """
+    Finds how many times the ball will pass in front of the window (1.5 meters height),
+    including falling and bouncing.
+    :param height: float : the height of the floor.
+    :param bounce: float : a bounce of the ball.
+    :return: int : number of bounces or -1 in case when one of the conditions is not fulfilled.
+    """
+
+    bounce_num = 1
+
+    if height > 0 and 0 < bounce < 1 and WINDOW < height:
+        while bounce * height > WINDOW:
+            bounce_num += 2
+            height *= bounce
+        return bounce_num
+
+    return -1
+
+
 def interp(func: str, l_a: float, u_b: float, n_c: int) -> list:
     """Search for some intermediate results.
         :func : func or str : receive your function(sin or cos) or string.
@@ -45,6 +68,7 @@ def interp(func: str, l_a: float, u_b: float, n_c: int) -> list:
         return res_list
     return None
 
+
 def round_to_lower(i: float) -> float:
     """
     Round down to a less value.
@@ -52,6 +76,7 @@ def round_to_lower(i: float) -> float:
         :returns : float : round up to a smaller number.
     """
     return floor(i*100.0)/100.0
+
 
 def approximation(num):
     """
