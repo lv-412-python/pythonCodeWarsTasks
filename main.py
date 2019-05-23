@@ -1,6 +1,7 @@
 """ToDo."""
 from tasks.kyu5 import fib_product, moving_shift, demoving_shift
 from tasks.kyu8 import short_long_short
+from tasks.kyu6 import interp
 
 
 def run_fib_product():
@@ -13,6 +14,16 @@ def run_fib_product():
     except ValueError:
         print("Wrong input!")
 
+def run_interp():
+    """ This function is entry point of program"""
+    try:
+        func = str(input('Enter string or trigonometric function: '))
+        l_a = float(input('Enter float value l: '))
+        u_b = float(input('Enter float value u: '))
+        n_c = int(input("Enter integer value n: "))
+        print('Your intermediate results: {}'.format(interp(func, l_a, u_b, n_c)))
+    except ValueError:
+        print('Please check input value ')
 
 def run_sls():
     """
@@ -40,3 +51,4 @@ if __name__ == '__main__':
     run_sls()
     run_moving_shift()
     run_fib_product()
+    run_interp()
