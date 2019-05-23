@@ -1,7 +1,8 @@
 """
 Implementation of short long short string concatenation.
 """
-
+LINEAR_RELATION = 3.9355
+OFFSET = 3.4680
 
 def short_long_short(first_str, second_str):
     """
@@ -19,8 +20,6 @@ def litres(time):
     """
     return int(time/2)
 
-LINEAR_RELATION = 3.9355
-OFFSET = 3.4680
 def starting_mark(height):
     """
     calculate best starting mark
