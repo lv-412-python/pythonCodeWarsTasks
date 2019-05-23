@@ -77,3 +77,18 @@ def fix_the_meerkat(arr):
     arr[0] = arr[2]
     arr[2] = tail
     return arr
+
+def square_or_square_root(arr):
+    """
+    If the number has an integer square root, take this, otherwise square the number.
+    :param: arr: list : The list of numbers.
+    :return: arr list : Modified list.
+    """
+    result = []
+    for element in arr:
+        root = element**0.5
+        if root.is_integer():
+            result.append(int(root))
+        else:
+            result.append(int(element*element))
+    return result
