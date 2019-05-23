@@ -17,7 +17,8 @@ from tasks.kyu8 import (
 from tasks.kyu6 import (
     interp,
     approximation,
-    bouncing_ball
+    bouncing_ball,
+    nba_cup, R
     )
 from tasks.kyu7 import (
     sum_of_square,
@@ -201,6 +202,10 @@ def run_replicate():
     except ValueError:
         print("You must input only numbers.")
 
+def run_nba_cup():
+    """Run nba_cup function"""
+    team = input('Enter the name of the team:   ')
+    print(nba_cup(R, team))
 
 if __name__ == '__main__':
     run_sls()
@@ -220,3 +225,4 @@ if __name__ == '__main__':
     run_triple_shiftian()
     run_second_8kyu_task()
     run_replicate()
+    run_nba_cup()
