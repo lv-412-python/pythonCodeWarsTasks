@@ -14,8 +14,8 @@ def short_long_short(first_str, second_str):
 def litres(time):
     """
     calculate needed amount of water
-    param time: float : time of run
-    return : int : needed amount of water based on time
+    :param time: float : time of run
+    :return : int : needed amount of water based on time
     """
     return int(time/2)
 
@@ -24,7 +24,7 @@ OFFSET = 3.4680
 def starting_mark(height):
     """
     calculate best starting mark
-    param height: float : height of athlete
-    return : float : best strting mark based on height
+    :param height: float : height of athlete
+    :return : float : best strting mark based on height
     """
     return round(height*LINEAR_RELATION+OFFSET, 2)

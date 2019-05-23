@@ -52,3 +52,11 @@ def round_to_lower(i: float) -> float:
         :returns : float : round up to a smaller number.
     """
     return floor(i*100.0)/100.0
+
+def approximation(num):
+    """
+    give a good approximation of f(x) in the neigbourhood of 0?
+    :param num: float : number
+    :return: float : approximation of f(x) in the neigbourhood of 0
+    """
+    return num/2-num**2/8+num**3/16-5/128*num**4+7/256*num**5

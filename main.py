@@ -1,7 +1,7 @@
 """ToDo."""
 from tasks.kyu5 import fib_product, moving_shift, demoving_shift
 from tasks.kyu8 import short_long_short, litres, starting_mark
-from tasks.kyu6 import interp
+from tasks.kyu6 import interp, approximation
 from tasks.kyu7 import sum_of_square, sequence_sum
 
 
@@ -87,6 +87,14 @@ def run_sequence_sum():
     except ValueError:
         print("Wrong input!")
 
+def run_approximation():
+    """ run approximation """
+    try:
+        number = float(input("enter number: "))
+        print(approximation(number))
+    except ValueError:
+        print("Wrong input!")
+
 if __name__ == '__main__':
 
     run_sls()
@@ -97,4 +105,4 @@ if __name__ == '__main__':
     run_sum_of_square()
     run_starting_mark()
     run_sequence_sum()
-    
+    run_approximation()
