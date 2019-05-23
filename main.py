@@ -37,6 +37,8 @@ def run_bouncing_ball():
         height = float(input("Enter height(must be greater than 1.5): "))
         bounce = float(input("Enter bounce of the ball(between 0 and 1): "))
         print(bouncing_ball(height, bounce))
+    except ValueError:
+        print("Wrong input!")
 
 
 def run_heads_legs():
@@ -183,22 +185,6 @@ def run_validate_usr():
 def run_fix_the_meerkat():
     """Run fix_the_meerkat function"""
     print(fix_the_meerkat(["tail", "body", "head"]))
-
-
-def run_heads_legs():
-    """
-    Runs heads_legs function.
-    """
-    try:
-        heads = int(input("Enter the amount of heads on the farm: "))
-        legs = int(input("Enter the amount of legs on the farm: "))
-        while heads > 1000 or legs > 1000:
-            print("Wrong input! Both numbers must be positive integers not greater than 1000.")
-            heads = int(input("Enter the amount of heads on the farm: "))
-            legs = int(input("Enter the amount of legs on the farm: "))
-        print(heads_legs(heads, legs))
-    except ValueError:
-        print("Wrong input!")
 
 
 def run_second_8kyu_task():
