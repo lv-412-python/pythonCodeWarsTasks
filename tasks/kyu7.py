@@ -22,3 +22,14 @@ def sum_of_square(line_number: int) -> int:
     for i in range(0, line_number+1):
         result += pow(pascal_triangle[line_number][i], 2)
     return result
+
+def sequence_sum(begin_number, end_number, step):
+    """
+    calculate sum of sequence
+    :param begin_number: int : start of sequence
+    :param end_number: int : end of sequence
+    :param step: int : step
+    :return: int : sum of sequence
+    """
+    return sum(list(range(begin_number, end_number+1, step)))
+    
