@@ -22,7 +22,8 @@ from tasks.kyu6 import (
 from tasks.kyu7 import (
     sum_of_square,
     sequence_sum,
-    triple_shiftian
+    triple_shiftian,
+    replicate
     )
 
 
@@ -191,6 +192,15 @@ def run_second_8kyu_task():
     except ValueError:
         print("You must enter only numbers.")
 
+def run_replicate():
+    """Run replicate function"""
+    try:
+        times = int(input("a: "))
+        number = int(input("b: "))
+        print(replicate(times, number))
+    except ValueError:
+        print("You must input only numbers.")
+
 
 if __name__ == '__main__':
     run_sls()
@@ -209,3 +219,4 @@ if __name__ == '__main__':
     run_bouncing_ball()
     run_triple_shiftian()
     run_second_8kyu_task()
+    run_replicate()
