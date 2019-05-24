@@ -67,3 +67,4 @@
 |   8-kyu | https://www.codewars.com/kata/bin-to-decimal |
 |   7-kyu | https://www.codewars.com/kata/sum-of-angles |
 |   6-kyu | https://www.codewars.com/kata/consonant-value/ |
+|   5-kyu | https://www.codewars.com/kata/primes-in-numbers/ |
