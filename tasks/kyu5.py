@@ -3,8 +3,10 @@
    https://www.codewars.com/kata/first-variation-on-caesar-cipher
 """
 import math
+
 RUNNERS = 5
 NUMBERS_OF_LETTERS_IN_THE_ALPHABET = 26
+
 
 def fib(num):
     """
@@ -40,14 +42,16 @@ def fib_product(product):
 
     return [fib1, fib2, False]
 
+
 def chunk_string(text: str, parts: int) -> list:
     """divide by message length between the five runners.
         :text : str : chipher text
         :parts : int : shows how many parts you need to split the text
         :returns : list : returns list with length which equal RUNNERS
     """
-    res = [text[i:i+len(text)//parts+1] for i in range(0, len(text), len(text)//parts+1)]
+    res = [text[i:i + len(text) // parts + 1] for i in range(0, len(text), len(text) // parts + 1)]
     return res
+
 
 def moving_shift(plain_text: str, shift: int) -> list:
     """Search for some intermediate results.
@@ -58,7 +62,7 @@ def moving_shift(plain_text: str, shift: int) -> list:
     chipher_text = ''
     for letter in plain_text:
         if letter.isalpha():
-            shift_letter = ord(letter)+shift
+            shift_letter = ord(letter) + shift
             if shift_letter > ord('z'):
                 shift_letter -= NUMBERS_OF_LETTERS_IN_THE_ALPHABET
             chipher_text += chr(shift_letter)
@@ -66,6 +70,7 @@ def moving_shift(plain_text: str, shift: int) -> list:
             chipher_text += letter
 
     return chunk_string(chipher_text, RUNNERS)
+
 
 def stick_together(chunks_chipher_text: list) -> str:
     """ Converts the list to string
@@ -77,6 +82,7 @@ def stick_together(chunks_chipher_text: list) -> str:
 
     return chipher_text
 
+
 def demoving_shift(chunks_chipher_text: list, shift: int) -> str:
     """ Decrypt chipher text
         :chunks_chipher_text : list : results of work moving_shift
@@ -87,7 +93,7 @@ def demoving_shift(chunks_chipher_text: list, shift: int) -> str:
     plain_text = ""
     for letter in chipher_text:
         if letter.isalpha():
-            shift_letter = ord(letter)-shift
+            shift_letter = ord(letter) - shift
             if shift_letter > ord('z'):
                 shift_letter += NUMBERS_OF_LETTERS_IN_THE_ALPHABET
             plain_text += chr(shift_letter)
@@ -95,6 +101,7 @@ def demoving_shift(chunks_chipher_text: list, shift: int) -> str:
             plain_text += letter
 
     return plain_text
+
 
 def desc(sub):
     """
@@ -127,6 +134,7 @@ def artificial_rain(garden):
             result_arr.append(desc(garden[i - 1::-1]) + desc(garden[i:]))
     return max(result_arr)
 
+
 def zeros(num):
     """
     Calculate the number of trailing zeros in a factorial of a given number and return number
@@ -139,6 +147,7 @@ def zeros(num):
         num_of_zeros += num // i
         i *= 5
     return num_of_zeros
+
 
 def gap_in_primes(gap, start, end):
     """Find a first pair of two successive prime numbers spaced with a defined gap-size.
@@ -195,9 +204,37 @@ def smallest(number):
     min_num, from_i, to_i = number, 0, 0
     number = str(number)
     for i in enumerate(number):
-        num1 = number[:i[0]] + number[i[0]+1:]
-        for j in range(len(num1)+1):
+        num1 = number[:i[0]] + number[i[0] + 1:]
+        for j in range(len(num1) + 1):
             num = int(num1[:j] + number[i[0]] + num1[j:])
             if num < min_num:
                 min_num, from_i, to_i = num, i[0], j
     return [min_num, from_i, to_i]
+
+
+def prime_factors(number):
+    """
+       Finds prime factors of the number.
+       :param number: int : The initial number.
+       :return: str : String with factors.
+    """
+    fact = []
+    i = 2
+    result = ''
+    while i <= number:
+        if number % i == 0:
+            fact.append(i)
+            number //= i
+        else:
+            i += 1
+    if number > 1:
+        fact.append(number)
+    k = 0
+    while k < len(fact):
+        num = fact.count(fact[k])
+        if num > 1:
+            result += '(' + str(fact[k]) + '**' + str(num) + ')'
+        else:
+            result += '(' + str(fact[k]) + ')'
+        k += num
+    return result

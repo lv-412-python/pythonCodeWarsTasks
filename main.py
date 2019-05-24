@@ -6,7 +6,8 @@ from tasks.kyu5 import (
     artificial_rain,
     zeros,
     gap_in_primes,
-    smallest
+    smallest,
+    prime_factors
 )
 from tasks.kyu8 import (
     short_long_short,
@@ -390,6 +391,17 @@ def run_consonant_value():
         print("Invalid input. It should be str")
 
 
+def run_prime_factors():
+    """
+        Runs prime_factors function.
+    """
+    try:
+        name = input("number: ")
+        print('it`s primes: ' + prime_factors(int(name)))
+    except ValueError:
+        print('Please enter integer')
+
+
 if __name__ == '__main__':
     run_sls()
     run_moving_shift()
@@ -419,3 +431,4 @@ if __name__ == '__main__':
     run_bin_to_decimal()
     run_sum_of_angles()
     run_consonant_value()
+    run_prime_factors()
