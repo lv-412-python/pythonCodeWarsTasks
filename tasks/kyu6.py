@@ -238,3 +238,26 @@ def variance_rainfall(town, strng):
 
     result /= len(data)
     return town + ": " + result
+
+
+def balance(book):
+    """
+        Function clean the lines keeping only letters, digits, dots and spaces.
+        Then add the new balance and then in the last two lines the total expense and
+        the average expense.
+        :param book: str : not formatted string.
+        :return: str : formatted string(book).
+    """
+    book = ''.join([i for i in book if i not in '!:=?;,{}'])
+    lst = [i for i in book.split('\n') if i]
+    balance_ = float(lst[0])
+    lst[0] = f"Original Balance: {balance_:.2f}\r\n"
+    sum_ = 0
+    for i in range(1, len(lst)):
+        price = float(lst[i].split()[-1])
+        sum_ += float(price)
+        balance_ = balance_ - price
+        lst[i] = ' '.join(lst[i].split()[0:-1]) + f" {price:.2f} Balance {balance_:.2f}\r\n"
+    avg = sum_/(len(lst)-1)
+    lst.append(f"Total expense  {sum_:.2f}\r\nAverage expense  {avg:.2f}")
+    return ''.join(lst)
