@@ -5,7 +5,8 @@ from tasks.kyu5 import (
     demoving_shift,
     artificial_rain,
     zeros,
-    gap_in_primes
+    gap_in_primes,
+    smallest
     )
 from tasks.kyu8 import (
     short_long_short,
@@ -321,6 +322,14 @@ def run_balance():
     book = input("Book: ")
     print(balance(book))
 
+
+def run_smallest():
+    """Run smallest function."""
+    try:
+        num = int(input("Number: "))
+        print(smallest(num))
+    except (ValueError, NameError):
+        print("You must enter a number.")
 
 if __name__ == '__main__':
     run_sls()
