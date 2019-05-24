@@ -3,7 +3,8 @@ from tasks.kyu5 import (
     fib_product,
     moving_shift,
     demoving_shift,
-    artificial_rain
+    artificial_rain,
+    zeros
     )
 from tasks.kyu8 import (
     short_long_short,
@@ -227,6 +228,14 @@ def run_triple_shiftian():
     except ValueError:
         print("Wrong input! All variables should be integers.")
 
+def run_zeros():
+    """Run zeros function"""
+    try:
+        number = int(input("Enter number   "))
+        print(zeros(number))
+    except ValueError:
+        print("You should enter number.")
+
 
 if __name__ == '__main__':
     run_sls()
@@ -249,3 +258,4 @@ if __name__ == '__main__':
     run_second_8kyu_task()
     run_replicate()
     run_nba_cup()
+    run_zeros()

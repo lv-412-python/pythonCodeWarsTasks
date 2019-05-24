@@ -23,6 +23,7 @@
 | 8-kyu | https://www.codewars.com/kata/to-square-root-or-not-to-square-root |
 | 7-kyu | https://www.codewars.com/kata/recursive-replication |
 | 6-kyu | https://www.codewars.com/kata/ranking-nba-teams |
+| 5-kyu | https://www.codewars.com/kata/number-of-trailing-zeros-of-n |
 
 
 |         |  Olya Petryshyn        |   |

@@ -125,3 +125,16 @@ def artificial_rain(garden):
         if garden[i] >= garden[i - 1] and garden[i] >= garden[i + 1]:
             result_arr.append(desc(garden[i - 1::-1]) + desc(garden[i:]))
     return max(result_arr)
+
+def zeros(num):
+    """
+    Calculate the number of trailing zeros in a factorial of a given number and return number
+    :param: num: int : Input number.
+    :return: int : Number of the zeros.
+    """
+    i = 5
+    num_of_zeros = 0
+    while num >= i:
+        num_of_zeros += num // i
+        i *= 5
+    return num_of_zeros
