@@ -51,3 +51,12 @@
 |7-kyu |https://www.codewars.com/kata/sum-of-the-first-nth-term-of-series   |
 |6-kyu |https://www.codewars.com/kata/build-a-pile-of-cubes |
 |5-kyu |https://www.codewars.com/kata/which-x-for-that-sum |
+
+
+|   |    Anastasia Siromska         |    |
+|------|:--------------:|-----------:|
+|8-kyu |https://www.codewars.com/kata/wilson-primes |
+|8-kyu |https://www.codewars.com/kata/formatting-decimal-places-number-0   |
+|7-kyu |https://www.codewars.com/kata/looking-for-a-benefactor    |
+|6-kyu |https://www.codewars.com/kata/easy-balance-checking |
+|5-kyu |https://www.codewars.com/kata/find-the-smallest |
