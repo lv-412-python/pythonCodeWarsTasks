@@ -183,3 +183,21 @@ def solve(limit):
     discriminant = math.pow((1 + 2 * limit), 2) - 4 * limit * limit
     argument = (- (1 + 2 * limit) + math.sqrt(discriminant)) / (-2 * limit)
     return argument
+
+
+def smallest(number):
+    """
+        Find the smallest number doing only one permutation.
+        :param number: int : number.
+        :return: tuple : [the smallest number we got, the index of the digit we took,
+                        the index where we insert digit].
+    """
+    min_num, from_i, to_i = number, 0, 0
+    number = str(number)
+    for i in enumerate(number):
+        num1 = number[:i[0]] + number[i[0]+1:]
+        for j in range(len(num1)+1):
+            num = int(num1[:j] + number[i[0]] + num1[j:])
+            if num < min_num:
+                min_num, from_i, to_i = num, i[0], j
+    return [min_num, from_i, to_i]
