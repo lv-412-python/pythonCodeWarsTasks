@@ -30,7 +30,8 @@ from tasks.kyu6 import (
     bouncing_ball,
     nba_cup, R,
     variance_rainfall,
-    balance
+    balance,
+    consonant_value
 )
 from tasks.kyu7 import (
     sum_of_square,
@@ -378,6 +379,17 @@ def run_sum_of_angles():
         print("Invalid input. It should be int")
 
 
+def run_consonant_value():
+    """
+        Runs consonant value function.
+    """
+    try:
+        name = input("input string: ")
+        print(consonant_value(name))
+    except ValueError:
+        print("Invalid input. It should be str")
+
+
 if __name__ == '__main__':
     run_sls()
     run_moving_shift()
@@ -406,3 +418,4 @@ if __name__ == '__main__':
     run_abbrev_name()
     run_bin_to_decimal()
     run_sum_of_angles()
+    run_consonant_value()

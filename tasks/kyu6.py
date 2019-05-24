@@ -6,6 +6,9 @@ from math import sin, cos, floor
 import re
 
 WINDOW = 1.5
+VALUES_FOR_CHARS = dict(zip(
+    ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
+     'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'], [i for i in range(1, 27)]))
 
 
 def find_nb(volume):
@@ -18,7 +21,7 @@ def find_nb(volume):
     vol = 0
     amount = 1
     while vol != volume:
-        vol += amount**3
+        vol += amount ** 3
         amount += 1
         if vol > volume:
             return -1
@@ -63,25 +66,25 @@ def interp(func: str, l_a: float, u_b: float, n_c: int) -> list:
         return res_list
 
     if 0 <= l_a < u_b:
-        res_list = [None]*n_c
-        d_d = (u_b-l_a)/n_c
+        res_list = [None] * n_c
+        d_d = (u_b - l_a) / n_c
 
         if isinstance(func, str):
             res_list[0] = round_to_lower(l_a)
-            res_list[1] = round_to_lower(l_a+d_d)
-            res_list[-1] = round_to_lower(u_b-d_d)
+            res_list[1] = round_to_lower(l_a + d_d)
+            res_list[-1] = round_to_lower(u_b - d_d)
 
-            for i in range(2, n_c-1):
-                res_list[i] = round_to_lower(d_d*i)
+            for i in range(2, n_c - 1):
+                res_list[i] = round_to_lower(d_d * i)
 
             return res_list
 
         res_list[0] = round_to_lower(func(l_a))
-        res_list[1] = round_to_lower(func(l_a+d_d))
-        res_list[-1] = round_to_lower(func(u_b-d_d))
+        res_list[1] = round_to_lower(func(l_a + d_d))
+        res_list[-1] = round_to_lower(func(u_b - d_d))
 
-        for i in range(2, n_c-1):
-            res_list[i] = round_to_lower(func(d_d*i))
+        for i in range(2, n_c - 1):
+            res_list[i] = round_to_lower(func(d_d * i))
 
         return res_list
     return None
@@ -93,7 +96,7 @@ def round_to_lower(i: float) -> float:
         :i : float : some intermediate results.
         :returns : float : round up to a smaller number.
     """
-    return floor(i*100.0)/100.0
+    return floor(i * 100.0) / 100.0
 
 
 def approximation(num):
@@ -102,7 +105,7 @@ def approximation(num):
     :param num: float : number
     :return: float : approximation of f(x) in the neigbourhood of 0
     """
-    return num/2-num**2/8+num**3/16-5/128*num**4+7/256*num**5
+    return num / 2 - num ** 2 / 8 + num ** 3 / 16 - 5 / 128 * num ** 4 + 7 / 256 * num ** 5
 
 
 R = ("Los Angeles Clippers 104 Dallas Mavericks 88,"
@@ -205,6 +208,7 @@ def nba_cup(result_sheet, to_find):
     Conceded={conceded};\
     Points={points}'
 
+
 def mean_rainfall(strng):
     """Calculate mean value of rainfall in the city.
 
@@ -218,6 +222,7 @@ def mean_rainfall(strng):
     data = [float(x) for x in data]
 
     return sum(data) / len(data)
+
 
 def variance_rainfall(town, strng):
     """Calculate variance of rainfall in the city.
@@ -258,6 +263,26 @@ def balance(book):
         sum_ += float(price)
         balance_ = balance_ - price
         lst[i] = ' '.join(lst[i].split()[0:-1]) + f" {price:.2f} Balance {balance_:.2f}\r\n"
-    avg = sum_/(len(lst)-1)
+    avg = sum_ / (len(lst) - 1)
     lst.append(f"Total expense  {sum_:.2f}\r\nAverage expense  {avg:.2f}")
     return ''.join(lst)
+
+
+def consonant_value(string):
+    """Return the highest value of consonant substrings
+        :string : str : initial lowercase string
+        :returns : int :  the highest value of consonant substrings
+    """
+    sub_val = []
+    # Split string into substrings on vowels
+    string = re.sub('[aeiou]', ' ', string)
+    substrings = string.split(' ')
+
+    # Finds value of each substring
+    for val in substrings:
+        value = 0
+        for j in val:
+            if j in VALUES_FOR_CHARS:
+                value += VALUES_FOR_CHARS[j]
+            sub_val.append(value)
+    return max(sub_val)
