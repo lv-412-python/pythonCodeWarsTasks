@@ -24,3 +24,12 @@
 | 7-kyu | https://www.codewars.com/kata/recursive-replication |
 | 6-kyu | https://www.codewars.com/kata/ranking-nba-teams |
 
+
+|         |  Olya Petryshyn        |   |
+| -------------- |:-------------:| -----:|
+|   8-kyu | https://www.codewars.com/kata/heads-and-legs |
+|   8-kyu | https://www.codewars.com/kata/short-long-short |
+|   7-kyu | https://www.codewars.com/kata/triple-shiftian-numbers |
+|   6-kyu | https://www.codewars.com/kata/bouncing-balls/ |
+|   5-kyu | https://www.codewars.com/kata/product-of-consecutive-fib-numbers/python |
+
