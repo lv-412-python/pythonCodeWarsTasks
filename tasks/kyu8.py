@@ -226,10 +226,18 @@ def divisible_by(array, divisor):
 
 
 def am_i_wilson(number):
-    """Check if number is wilson prime.
-    Args:
-        number: number for checking.
-    Returns:
-        bool: True for wilson primes.
+    """
+        Check if number is wilson prime.
+        :param number: int : number for checking.
+        :return: bool : True for wilson primes.
     """
     return number in (5, 13, 563)
+
+
+def two_decimal_places(number):
+    """
+        Round number to two decimal places.
+        :param number: float : number to be formatted.
+        :return: float : rounded number to two decimals.
+    """
+    return round(number, 2)
