@@ -2,6 +2,7 @@
 """Task solution:
    https://www.codewars.com/kata/first-variation-on-caesar-cipher
 """
+import math
 RUNNERS = 5
 NUMBERS_OF_LETTERS_IN_THE_ALPHABET = 26
 
@@ -170,3 +171,15 @@ def gap_in_primes(gap, start, end):
         i += 1
 
     return None
+
+
+def solve(limit):
+    """
+    Calculates x out of sequence 'x + 2x**2 + 3x**3 + .. + nx**n'
+
+    :param limit: float : The limit of the sequence.
+    :return: float : argument of the sequence.
+    """
+    discriminant = math.pow((1 + 2 * limit), 2) - 4 * limit * limit
+    argument = (- (1 + 2 * limit) + math.sqrt(discriminant)) / (-2 * limit)
+    return argument
