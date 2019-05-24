@@ -4,6 +4,7 @@ Task solution:
    https://www.codewars.com/kata/simple-validation-of-a-username-with-regex
 """
 import re
+from math import pi
 
 ALLOWED_CHARACTERS_PATTERN = r'^[a-z0-9]\S*$'
 MIN_USERNAME_LENGHT = 4
@@ -12,6 +13,72 @@ LINEAR_RELATION = 3.9355
 OFFSET = 3.4680
 ONE_IMP_GALLON_IN_LITERS = 4.54609188
 ONE_MILE_IN_KILOMETERS = 1.606344
+
+
+class Circle:
+    """
+    A class used to represent a Circle
+    """
+
+    def __init__(self, point, radius):
+        """
+        :param point: Point: The object of class Point.
+        :param radius: float: A radius of the circle.
+        """
+        self._point = point
+        self._radius = radius
+
+    @property
+    def point(self):
+        """
+        :return: str
+        """
+        return self._point
+
+    @property
+    def radius(self):
+        """
+        :return: float or int
+        """
+        return self._radius
+
+
+class Point:
+    """
+    A class used to represent a Point
+    """
+
+    def __init__(self, x_num, y_num):
+        """
+        :param x_num: int or float: The coordinate of x.
+        :param y_num: int or float: The coordinate of y.
+        """
+        self._x_point = x_num
+        self._y_point = y_num
+
+    @property
+    def x_point(self):
+        """
+        :return: int or float
+        """
+        return self._x_point
+
+    @property
+    def y_point(self):
+        """
+        :return: int or float
+        """
+        return self._y_point
+
+
+def circle_area(circle):
+    """"
+    Calculates the area of a circle
+
+    :param circle: Circle: The object of class Point.
+    :return: float: The area of the circle
+    """
+    return pi * circle.radius * circle.radius
 
 
 def volume_of_a_cuboid(length, width, height):
