@@ -4,7 +4,8 @@ from tasks.kyu5 import (
     moving_shift,
     demoving_shift,
     artificial_rain,
-    zeros
+    zeros,
+    gap_in_primes
     )
 from tasks.kyu8 import (
     short_long_short,
@@ -235,6 +236,16 @@ def run_zeros():
         print(zeros(number))
     except ValueError:
         print("You should enter number.")
+
+def find_primes():
+    """Run gap_in_primes function."""
+    try:
+        gap = int(input("gap size: "))
+        start = int(input("start of the search, inclusive: "))
+        end = int(input("end of the search, inclusive: "))
+        print(gap_in_primes(gap, start, end))
+    except (ValueError, NameError):
+        print("Input value must be an integer number")
 
 
 if __name__ == '__main__':

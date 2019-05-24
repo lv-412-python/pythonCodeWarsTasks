@@ -138,3 +138,35 @@ def zeros(num):
         num_of_zeros += num // i
         i *= 5
     return num_of_zeros
+
+def gap_in_primes(gap, start, end):
+    """Find a first pair of two successive prime numbers spaced with a defined gap-size.
+
+    :param gap: int : Size of the gap between two primes.
+    :param start: int : Gives the start number of the search (inclusive).
+    :param end: int : Gives the end number of the search (inclusive).
+
+    :return: tuple: The pair of two successive primes between start and end.
+    :return: None: When there is no two successive prime numbers between start and end.
+
+    """
+    primes = []
+
+    for possible_prime in range(start, end + 1):
+        is_prime = True
+
+        for num in range(2, int(possible_prime ** 0.5) + 1):
+            if possible_prime % num == 0:
+                is_prime = False
+                break
+
+        if is_prime:
+            primes.append(possible_prime)
+
+    i = 0
+    while i < len(primes) - 1:
+        if primes[i + 1] - primes[i] == gap:
+            return (primes[i], primes[i + 1])
+        i += 1
+
+    return None

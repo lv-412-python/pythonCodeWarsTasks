@@ -34,3 +34,7 @@
 |   6-kyu | https://www.codewars.com/kata/bouncing-balls/ |
 |   5-kyu | https://www.codewars.com/kata/product-of-consecutive-fib-numbers/python |
 
+
+|    |         Iryna Pavliv          |    |
+|------|:------------------:|-----------------:|
+|5-kyu |https://www.codewars.com/kata/gap-in-primes | 
