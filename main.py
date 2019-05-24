@@ -25,7 +25,8 @@ from tasks.kyu6 import (
     approximation,
     bouncing_ball,
     nba_cup, R,
-    variance_rainfall
+    variance_rainfall,
+    balance
     )
 from tasks.kyu7 import (
     sum_of_square,
@@ -313,6 +314,13 @@ def run_new_avg():
         print(new_avg(arr, navg))
     except (NameError, ValueError):
         print("You must enter a number.")
+
+
+def run_balance():
+    """Run balance function."""
+    book = input("Book: ")
+    print(balance(book))
+
 
 if __name__ == '__main__':
     run_sls()
