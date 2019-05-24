@@ -19,7 +19,8 @@ from tasks.kyu8 import (
     heads_legs,
     volume_of_a_cuboid,
     miles_per_gallon_to_kilometers_per_liter,
-    am_i_wilson
+    am_i_wilson,
+    two_decimal_places
     )
 from tasks.kyu6 import (
     interp,
@@ -328,6 +329,15 @@ def run_smallest():
     try:
         num = int(input("Number: "))
         print(smallest(num))
+    except (ValueError, NameError):
+        print("You must enter a number.")
+
+
+def run_two_decimals_places():
+    """Run two_decimals_places function."""
+    try:
+        number = float(input("Number: "))
+        print(two_decimal_places(number))
     except (ValueError, NameError):
         print("You must enter a number.")
 
