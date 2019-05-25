@@ -7,7 +7,7 @@ from tasks.kyu5 import (
     zeros,
     gap_in_primes,
     smallest
-    )
+)
 from tasks.kyu8 import (
     short_long_short,
     litres,
@@ -31,15 +31,16 @@ from tasks.kyu6 import (
     nba_cup, R,
     variance_rainfall,
     balance
-    )
+)
 from tasks.kyu7 import (
     sum_of_square,
     sequence_sum,
     triple_shiftian,
     replicate,
     where_is_vasya,
-    new_avg
-    )
+    new_avg,
+    angle
+)
 
 
 def run_bouncing_ball():
@@ -366,6 +367,17 @@ def run_bin_to_decimal():
         print("Invalid input. It should be str")
 
 
+def run_sum_of_angles():
+    """
+        Runs angle function.
+    """
+    try:
+        number = int(input("number of angles: "))
+        print(angle(number))
+    except ValueError:
+        print("Invalid input. It should be int")
+
+
 if __name__ == '__main__':
     run_sls()
     run_moving_shift()
@@ -393,3 +405,4 @@ if __name__ == '__main__':
     run_new_avg()
     run_abbrev_name()
     run_bin_to_decimal()
+    run_sum_of_angles()
