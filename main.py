@@ -21,8 +21,9 @@ from tasks.kyu8 import (
     miles_per_gallon_to_kilometers_per_liter,
     am_i_wilson,
     two_decimal_places,
-    abbrev_name
-    )
+    abbrev_name,
+    bin_to_decimal
+)
 from tasks.kyu6 import (
     interp,
     approximation,
@@ -354,6 +355,17 @@ def run_abbrev_name():
         print("Invalid input. It should be str")
 
 
+def run_bin_to_decimal():
+    """
+    Runs bin_to_decimal function.
+    """
+    try:
+        num = str(input("bin number: "))
+        print(bin_to_decimal(num))
+    except ValueError:
+        print("Invalid input. It should be str")
+
+
 if __name__ == '__main__':
     run_sls()
     run_moving_shift()
@@ -380,3 +392,4 @@ if __name__ == '__main__':
     run_am_i_wilson()
     run_new_avg()
     run_abbrev_name()
+    run_bin_to_decimal()

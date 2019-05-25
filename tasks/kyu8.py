@@ -252,3 +252,18 @@ def abbrev_name(name):
     arr = name.split()
     anw = arr[0][0] + "." + arr[1][0]
     return anw.upper()
+
+
+def bin_to_decimal(inp):
+    """
+    convert a binary number into decimal
+    :param inp: str :binary number
+    :return: int :decimal number
+    """
+    bin_list = list(inp)
+    j = len(bin_list)
+    dec_num = 0
+    for i in range(j):
+        dec_num += (int(bin_list[i]) * (2 ** (j - 1)))
+        j -= 1
+    return dec_num
