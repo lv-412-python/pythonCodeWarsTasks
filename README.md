@@ -60,3 +60,7 @@
 |7-kyu |https://www.codewars.com/kata/looking-for-a-benefactor    |
 |6-kyu |https://www.codewars.com/kata/easy-balance-checking |
 |5-kyu |https://www.codewars.com/kata/find-the-smallest |
+
+| | Mykhailo Khadai |
+| -------------- |:------------------:|
+| 8-kyu | https://www.codewars.com/kata/abbreviate-a-two-word-name |
