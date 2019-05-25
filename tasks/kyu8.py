@@ -127,7 +127,7 @@ def litres(time):
     :param time: float : time of run
     :return : int : needed amount of water based on time
     """
-    return int(time/2)
+    return int(time / 2)
 
 
 def starting_mark(height):
@@ -136,7 +136,7 @@ def starting_mark(height):
     :param height: float : height of athlete
     :return : float : best strting mark based on height
     """
-    return round(height*LINEAR_RELATION+OFFSET, 2)
+    return round(height * LINEAR_RELATION + OFFSET, 2)
 
 
 def duty_free(price: int, discount: int, holiday_cost: int) -> int:
@@ -189,11 +189,11 @@ def square_or_square_root(arr):
     """
     result = []
     for element in arr:
-        root = element**0.5
+        root = element ** 0.5
         if root.is_integer():
             result.append(int(root))
         else:
-            result.append(int(element*element))
+            result.append(int(element * element))
     return result
 
 
@@ -241,3 +241,14 @@ def two_decimal_places(number):
         :return: float : rounded number to two decimals.
     """
     return round(number, 2)
+
+
+def abbrev_name(name):
+    """
+    Convert a name into initials
+    :param name: str : two-worded name.
+    :return: str : initials of the name.
+    """
+    arr = name.split()
+    anw = arr[0][0] + "." + arr[1][0]
+    return anw.upper()

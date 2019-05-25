@@ -20,7 +20,8 @@ from tasks.kyu8 import (
     volume_of_a_cuboid,
     miles_per_gallon_to_kilometers_per_liter,
     am_i_wilson,
-    two_decimal_places
+    two_decimal_places,
+    abbrev_name
     )
 from tasks.kyu6 import (
     interp,
@@ -341,6 +342,18 @@ def run_two_decimals_places():
     except (ValueError, NameError):
         print("You must enter a number.")
 
+
+def run_abbrev_name():
+    """
+    Runs abbrev_name function.
+    """
+    try:
+        name = str(input("two-worded name: "))
+        print(abbrev_name(name))
+    except ValueError:
+        print("Invalid input. It should be str")
+
+
 if __name__ == '__main__':
     run_sls()
     run_moving_shift()
@@ -366,3 +379,4 @@ if __name__ == '__main__':
     make_conversion()
     run_am_i_wilson()
     run_new_avg()
+    run_abbrev_name()
