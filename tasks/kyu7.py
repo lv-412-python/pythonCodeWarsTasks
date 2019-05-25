@@ -5,6 +5,8 @@
 """
 from math import ceil
 
+ANGLE_CONST = 180
+
 
 def series_sum(nth_num):
     """
@@ -44,7 +46,7 @@ def sum_of_square(line_number: int) -> int:
     :returns : int : the sum of the squares of the binomial coefficients on line n.
     """
 
-    pascal_triangle = [[0 for i in range(line_number + 1)]for j in range(line_number + 1)]
+    pascal_triangle = [[0 for i in range(line_number + 1)] for j in range(line_number + 1)]
     for i in range(0, line_number + 1):
 
         for j in range(0, min(i, line_number) + 1):
@@ -54,7 +56,7 @@ def sum_of_square(line_number: int) -> int:
                 pascal_triangle[i][j] = (pascal_triangle[i - 1][j - 1] + pascal_triangle[i - 1][j])
 
     result = 0
-    for i in range(0, line_number+1):
+    for i in range(0, line_number + 1):
         result += pow(pascal_triangle[line_number][i], 2)
     return result
 
@@ -67,7 +69,7 @@ def sequence_sum(begin_number, end_number, step):
     :param step: int : step
     :return: int : sum of sequence
     """
-    return sum(list(range(begin_number, end_number+1, step)))
+    return sum(list(range(begin_number, end_number + 1, step)))
 
 
 def replicate(times, number):
@@ -82,7 +84,7 @@ def replicate(times, number):
     if times == 1:
         return [number]
     list_of_nums = [number]
-    return list_of_nums + replicate(times-1, number)
+    return list_of_nums + replicate(times - 1, number)
 
 
 def where_is_vasya(total, in_front):
@@ -111,8 +113,17 @@ def new_avg(arr, navg):
     :return: int : positive number.
     :raise: ValueError : if 'num' is negative.
     """
-    num = navg*(len(arr)+1) - sum(arr)
+    num = navg * (len(arr) + 1) - sum(arr)
     if num < 0:
         raise ValueError
 
     return ceil(num)
+
+
+def angle(_num_of_sides):
+    """
+        Finds the total sum of angles in an n sided shape.
+        :param _num_of_sides: int :  number of sides.
+        :return: int : Total sum of angles.
+    """
+    return ANGLE_CONST * (_num_of_sides - 2)
