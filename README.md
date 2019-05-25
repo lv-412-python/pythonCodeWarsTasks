@@ -64,3 +64,4 @@
 | | Mykhailo Khadai |
 | -------------- |:------------------:|
 | 8-kyu | https://www.codewars.com/kata/abbreviate-a-two-word-name |
+| 8-kyu | https://www.codewars.com/kata/bin-to-decimal |
