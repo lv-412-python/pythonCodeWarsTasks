@@ -16,3 +16,29 @@ def numeric_list_input(length=None):
             break
         result.append(value)
     return numeric_list_input(length) if result == [] else result
+
+def float_input(min = 0, max = 999999, positive = False):
+    """Read float number.
+
+    :param min: float : minimal value.
+    :param max: float : maximal value.
+    :param positive: boolean : true if positive number is needed.
+
+    :returns: float : if input is float and fit conditions (if they are).
+    :returns: float_input if caught ValueError.
+    """
+    result = float()
+
+    try:
+        result = float(input("Enter float number: "))
+        if result < min or result > max:# or args[0] > args[1]:
+            raise ValueError
+
+        if positive and result < 0:
+            raise ValueError
+
+    except ValueError:
+        print("Wrong input. Must be a float number and fit conditions (if they are)")
+        result = float_input(min, max, positive)
+
+    return result
