@@ -160,7 +160,7 @@ R = ("Los Angeles Clippers 104 Dallas Mavericks 88,"
 
 def nba_cup(result_sheet, to_find):
     """
-    If the number has an integer square root, take this, otherwise square the number.
+    Function gets name of the team and print statistic of this team.
     :param: result_sheet: str : Matches and scores.
     :param: to_find: str : Name of the team.
     :return: str : Returns a string with team statistics.

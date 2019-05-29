@@ -17,6 +17,7 @@ def numeric_list_input(length=None):
         result.append(value)
     return numeric_list_input(length) if result == [] else result
 
+
 def float_input(min_val = None, max_val = None, positive = False):
     """Read float number.
 
@@ -45,3 +46,35 @@ def float_input(min_val = None, max_val = None, positive = False):
     else:
         result = float_input(min_val, max_val, positive)
     return result
+
+def read_integer(minimum=None, maximum=None, positive=False):
+    """Read int number. Can take arguments:
+    :param args[0]: int : max value.
+    or
+    :param args[0]: int : min value.
+    :param args[1]: int : max value.
+
+    :param kwargs["positive"]: boolean : True if positive number is needed.
+
+    :returns: int : if input is int and fit conditions (if they are).
+    :returns: int_input() if caught ValueError.
+    """
+    data = None
+    try:
+        data = int(input("Enter integer please: "))
+    except ValueError:
+        print('Incorrect input, must be only integers that fit conditions (if conditions exists)!')
+    if data is not None:
+        if minimum and data < minimum:
+            print('Wrong input, must be only integers that fit conditions (if conditions exists)!')
+            data = read_integer(minimum, maximum, positive)
+        if maximum and data > maximum:
+            print('Wrong input, must be only integers that fit conditions (if conditions exists)!')
+            data = read_integer(minimum, maximum, positive)
+        if positive and data < 0:
+            print('Wrong input, must be only integers that fit conditions (if conditions exists)!')
+            data = read_integer(minimum, maximum, positive)
+    else:
+        data = read_integer(minimum, maximum, positive)
+    return data
+
