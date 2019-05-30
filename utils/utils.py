@@ -18,7 +18,7 @@ def numeric_list_input(length=None):
     return numeric_list_input(length) if result == [] else result
 
 
-def float_input(min_val = None, max_val = None, positive = False):
+def float_input(min_val=None, max_val=None, positive=False):
     """Read float number.
 
     :param min_val: float : minimal value (inclusive).
@@ -77,4 +77,3 @@ def read_integer(minimum=None, maximum=None, positive=False):
     else:
         data = read_integer(minimum, maximum, positive)
     return data
-
