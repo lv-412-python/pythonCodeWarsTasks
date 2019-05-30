@@ -1,7 +1,9 @@
 """Utilities for user input of arguments"""
 
 def integer_list_input(length=None):
-    """returns list of numbers from user input"""
+    """returns list of numbers from user input
+    :param length: int: needed length of list
+    :returns: list: if result != None else integer_list_input(length)"""
     input_string = input("Enter a list of {} integers separated by space: "
                          .format(length if length is not None else ""))
     data = [i for i in input_string.split(" ") if i]
