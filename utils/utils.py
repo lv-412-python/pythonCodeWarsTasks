@@ -1,4 +1,4 @@
-"""Utilities for main.py"""
+"""Utilities"""
 
 def numeric_list_input(length=None):
     """returns list of numbers from user input"""
@@ -17,28 +17,31 @@ def numeric_list_input(length=None):
         result.append(value)
     return numeric_list_input(length) if result == [] else result
 
-def float_input(min = 0, max = 999999, positive = False):
+def float_input(min_val = None, max_val = None, positive = False):
     """Read float number.
 
-    :param min: float : minimal value.
-    :param max: float : maximal value.
+    :param min_val: float : minimal value (inclusive).
+    :param max_val: float : maximal value (inclusive).
     :param positive: boolean : true if positive number is needed.
 
     :returns: float : if input is float and fit conditions (if they are).
     :returns: float_input if caught ValueError.
     """
-    result = float()
-
+    result = None
     try:
         result = float(input("Enter float number: "))
-        if result < min or result > max:# or args[0] > args[1]:
-            raise ValueError
-
-        if positive and result < 0:
-            raise ValueError
-
     except ValueError:
         print("Wrong input. Must be a float number and fit conditions (if they are)")
-        result = float_input(min, max, positive)
-
+    if result is not None:
+        if min_val and result < min_val:
+            print("Wrong input. Number must be greater or equal %.2f" % min_val)
+            result = float_input(min_val, max_val, positive)
+        if max_val and result > max_val:
+            print(f"Wrong input. Number must be less or equal %.2f" % max_val)
+            result = float_input(min_val, max_val, positive)
+        if positive and result < 0:
+            print("Wrong input. Number must be positive or 0")
+            result = float_input(min_val, max_val, positive)
+    else:
+        result = float_input(min_val, max_val, positive)
     return result
