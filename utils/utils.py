@@ -1,23 +1,24 @@
-"""Utilities"""
+"""Utilities for user input of arguments"""
 
-def numeric_list_input(length=None):
+def integer_list_input(length=None):
     """returns list of numbers from user input"""
     input_string = input("Enter a list of {} integers separated by space: "
                          .format(length if length is not None else ""))
     data = [i for i in input_string.split(" ") if i]
     result = []
-    for value in data[:length]:
-        try:
-            value = int(value)
-        except ValueError:
-            print(f"Oops, seems like [{value}] is not an integer")
-        if isinstance(value, str):
-            result = numeric_list_input(length)
-            break
-        result.append(value)
-    return numeric_list_input(length) if result == [] else result
+    if length and len(data) < length:
+        result = None
+    else:
+        for value in data[:length]:
+            try:
+                result.append(int(value))
+            except ValueError:
+                print(f"Oops, seems like [{value}] is not an integer")
+                result = None
+                break
+    return result if result else integer_list_input(length)
 
-def float_input(min_val = None, max_val = None, positive = False):
+def float_input(min_val=None, max_val=None, positive=False):
     """Read float number.
 
     :param min_val: float : minimal value (inclusive).
