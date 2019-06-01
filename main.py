@@ -203,7 +203,7 @@ def run_fix_the_meerkat():
     print(fix_the_meerkat(["tail", "body", "head"]))
 
 
-def run_second_8kyu_task():
+def run_square_or_square_root():
     """Run square_or_square_root function"""
     try:
         input_ = input("Enter a sequence of numbers separated by a space: ")
@@ -420,7 +420,6 @@ if __name__ == '__main__':
     run_fix_the_meerkat()
     run_bouncing_ball()
     run_triple_shiftian()
-    run_second_8kyu_task()
     run_replicate()
     run_nba_cup()
     run_zeros()
