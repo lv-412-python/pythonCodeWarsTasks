@@ -7,7 +7,8 @@ from tasks.kyu5 import (
     zeros,
     gap_in_primes,
     smallest,
-    prime_factors
+    prime_factors,
+    solve
 )
 from tasks.kyu8 import (
     short_long_short,
@@ -23,7 +24,11 @@ from tasks.kyu8 import (
     am_i_wilson,
     two_decimal_places,
     abbrev_name,
-    bin_to_decimal
+    bin_to_decimal,
+    Circle,
+    Point,
+    circle_area,
+    divisible_by
 )
 from tasks.kyu6 import (
     interp,
@@ -32,7 +37,8 @@ from tasks.kyu6 import (
     nba_cup, R,
     variance_rainfall,
     balance,
-    consonant_value
+    consonant_value,
+    find_nb
 )
 from tasks.kyu7 import (
     sum_of_square,
@@ -41,10 +47,11 @@ from tasks.kyu7 import (
     replicate,
     where_is_vasya,
     new_avg,
-    angle
+    angle,
+    series_sum
 )
 from utils.utils import (
-    # integer_list_input,
+    integer_list_input,
     float_input,
     read_integer
 )
@@ -60,7 +67,8 @@ __all__ = ['run_bouncing_ball', 'run_heads_legs', 'run_fib_product',
            'run_miles_per_gallon_to_kilometers_per_liter', 'run_am_i_wilson',
            'run_new_avg', 'run_balance', 'run_smallest', 'run_two_decimals_places',
            'run_abbrev_name', 'run_bin_to_decimal', 'run_angle',
-           'run_consonant_value', 'run_prime_factors']
+           'run_consonant_value', 'run_prime_factors', 'run_circle_area', 'run_divisible_by',
+           'run_series_sum', 'run_find_nb', 'run_solve']
 
 def get_docstring(func=None):
     '''finds docstring'''
@@ -426,3 +434,53 @@ def run_prime_factors():
         print('it`s primes: ' + prime_factors(int(name)))
     except ValueError:
         print('Please enter integer')
+
+
+def run_circle_area():
+    """Runs circle_area function"""
+    print('X coordinate:')
+    x_coordinate = float_input()
+    print('Y coordinate:')
+    y_coordinate = float_input()
+    print('Radius:')
+    radius = float_input()
+    point = Point(x_coordinate, y_coordinate)
+    circle = Circle(point, radius)
+    area = circle_area(circle)
+    print('The area of the circle is: {}'.format(area))
+
+
+def run_divisible_by():
+    """Runs divisible_by function"""
+    array = integer_list_input()
+    divisor = read_integer(positive=True)
+    divisible = divisible_by(array, divisor)
+    expression = "Numbers that are divisible by {}: {}".format(divisor, divisible) \
+        if divisible else "None of given numbers are divisible by {}".format(divisor)
+    print(expression)
+
+
+def run_series_sum():
+    """Runs series_sum function"""
+    print("Input a term:")
+    term = read_integer(positive=True)
+    series = series_sum(term)
+    print("Sum of the series upto {} term is: {}".format(term, series))
+
+
+def run_find_nb():
+    """Runs find_nb function"""
+    print("The volume: ")
+    volume = read_integer(positive=True)
+    cubes = find_nb(volume)
+    expression = "The number of cubes is: {}".format(cubes) \
+        if not cubes == -1 else "Cannot find number of cubes for given volume"
+    print(expression)
+
+
+def run_solve():
+    """Runs solve function"""
+    print("Limit")
+    limit = float_input()
+    argument = solve(limit)
+    print('The argument of the sequence is: {}'.format(argument))
