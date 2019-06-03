@@ -126,7 +126,8 @@ def run_sum_of_square():
 def run_litres():
     """ run litres """
     try:
-        time = float(input("enter time: "))
+        print("Enter time of the run")
+        time = float_input(positive=True)
         print(litres(time))
     except ValueError:
         print("Wrong input!")
@@ -172,7 +173,8 @@ def run_moving_shift():
 def run_starting_mark():
     """ run starting_mark """
     try:
-        height = float(input("enter height: "))
+        print("Enter height:")
+        height = float_input(min_val=1.22, max_val=2.13)
         print(starting_mark(height))
     except ValueError:
         print("Wrong input!")
@@ -181,9 +183,12 @@ def run_starting_mark():
 def run_sequence_sum():
     """ run sequence sum """
     try:
-        begin_number = int(input("enter start: "))
-        end_number = int(input("enter end: "))
-        step = int(input("enter step: "))
+        print("Start of sequence: ")
+        begin_number = read_integer()
+        print("End of sequence: ")
+        end_number = read_integer()
+        print("Step: ")
+        step = read_integer()
         print(sequence_sum(begin_number, end_number, step))
     except ValueError:
         print("Wrong input!")
@@ -192,7 +197,7 @@ def run_sequence_sum():
 def run_approximation():
     """ run approximation """
     try:
-        number = float(input("enter number: "))
+        number = float_input(positive=True)
         print(approximation(number))
     except ValueError:
         print("Wrong input!")
@@ -201,8 +206,7 @@ def run_approximation():
 def run_artificial_rain():
     """ run artificial rain """
     try:
-        input_string = input("Enter a list element separated by space ")
-        garden = input_string.split()
+        garden = integer_list_input()
         print(artificial_rain(garden))
     except ValueError:
         print('Wrong input!')
