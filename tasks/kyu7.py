@@ -75,9 +75,9 @@ def sequence_sum(begin_number, end_number, step):
 def replicate(times, number):
     """
     Function should return list containing repetitions of the number argument
-    :param: times: int : number of repetitions
-    :param: number: int : number that repeats
-    :return: arr list : list of digits.
+    :param times: int : number of repetitions
+    :param number: int : number that repeats
+    :return: list : list of digits.
     """
     if times <= 0:
         return []

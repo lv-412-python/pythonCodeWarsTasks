@@ -54,7 +54,7 @@ def integer_input(minimum=None, maximum=None, positive=False):
     """Read integer number.
 
     :param minimum: int : minimal value (inclusive).
-    :param maximum: int : maximal value (inclusive).
+    :param maximum: int : maximal value (inclusive)
     :param positive: boolean : true if positive number is needed.
 
     :returns: int : if input is int and fit conditions (if they are).

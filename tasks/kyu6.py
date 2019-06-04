@@ -161,8 +161,8 @@ R = ("Los Angeles Clippers 104 Dallas Mavericks 88,"
 def nba_cup(result_sheet, to_find):
     """
     Function gets name of the team and print statistic of this team.
-    :param: result_sheet: str : Matches and scores.
-    :param: to_find: str : Name of the team.
+    :param result_sheet: str : Matches and scores.
+    :param to_find: str : Name of the team.
     :return: str : Returns a string with team statistics.
     """
     if to_find == '':
@@ -170,10 +170,10 @@ def nba_cup(result_sheet, to_find):
     result_sheet = result_sheet.lower()
     to_find = to_find.lower()
     wins = draws = losses = scored = conceded = points = 0
-    for act in result_sheet.split(','):
-        matched = re.search(r'^(.*?) (\d+) (.*?) (\d+)$', act)
+    for game in result_sheet.split(','):
+        matched = re.search(r'^(.*?) (\d+) (.*?) (\d+)$', game)
         if not matched:
-            return f'Error(float number):{act}'
+            return f'Error(float number):{game}'
         teams = {
             "f_team": '',
             "f_score": 0,
