@@ -218,10 +218,13 @@ def mean_rainfall(strng):
     :return: float : Mean value of rainfall.
 
     """
-    data = strng.split('\n')
-    data = [float(x) for x in data]
-
-    return sum(data) / len(data)
+    result = 0
+    if not strng: result = -1
+    else:
+        data = strng.split('\n')
+        data = [float(x) for x in data]
+        result = sum(data) / len(data)
+    return result
 
 
 def variance_rainfall(town, strng):
@@ -234,15 +237,17 @@ def variance_rainfall(town, strng):
     :return: str: Variance of rainfall.
 
     """
-    data = strng.split('\n')
-    data = [float(x) for x in data]
-
     result = 0
-    for value in data:
-        result += pow(value - mean_rainfall(strng), 2)
+    if not strng: result = -1
+    else:
+        data = strng.split('\n')
+        data = [float(x) for x in data]
+        for value in data:
+            result += pow(value - mean_rainfall(strng), 2)
 
-    result /= len(data)
-    return town + ": " + result
+        result /= len(data)
+        result = town + ": " + result
+    return result
 
 
 def balance(book):
