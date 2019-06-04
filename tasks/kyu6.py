@@ -219,7 +219,8 @@ def mean_rainfall(strng):
 
     """
     result = 0
-    if not strng: result = -1
+    if not strng:
+        result = -1
     else:
         data = strng.split('\n')
         data = [float(x) for x in data]
@@ -238,7 +239,8 @@ def variance_rainfall(town, strng):
 
     """
     result = 0
-    if not strng: result = -1
+    if not strng:
+        result = -1
     else:
         data = strng.split('\n')
         data = [float(x) for x in data]

@@ -53,7 +53,7 @@ from tasks.kyu7 import (
 from utils.utils import (
     integer_list_input,
     float_input,
-    read_integer
+    integer_input
 )
 
 __all__ = ['run_bouncing_ball', 'run_heads_legs', 'run_fib_product',
@@ -73,7 +73,7 @@ __all__ = ['run_bouncing_ball', 'run_heads_legs', 'run_fib_product',
 def get_docstring(func=None):
     '''finds docstring'''
     try:
-        print(exec(func[4:]).__doc__)
+        print(eval(func[4:]).__doc__)
     except:
         print("Sorry, but I don't have this function")
 
@@ -118,7 +118,7 @@ def run_fib_product():
 
 def run_sum_of_square():
     """ THis function is entry point of program"""
-    binomial_coefficients = read_integer()
+    binomial_coefficients = integer_input()
     print('Your sum of the squares: {}'.format(
         sum_of_square(binomial_coefficients)))
 
@@ -141,7 +141,7 @@ def run_interp():
     print('Value u')
     u_b = float_input(positive=True)
     print('Value n')
-    n_c = read_integer()
+    n_c = integer_input()
     print('Your intermediate results: {}'.format(interp(func, l_a, u_b, n_c)))
 
 
@@ -163,7 +163,7 @@ def run_moving_shift():
     """ This function is entry point of program"""
     plain_text = str(input('Enter your message: '))
     print('Shift')
-    shift = read_integer()
+    shift = integer_input()
     encrypted_message = moving_shift(plain_text, shift)
     print('Your encrypted message: {}'.format(encrypted_message))
     print('Your decrypted message: {}'.format(demoving_shift(encrypted_message, shift)))
@@ -174,7 +174,7 @@ def run_starting_mark():
     """ run starting_mark """
     try:
         print("Enter height:")
-        height = float_input(min_val=1.22, max_val=2.13)
+        height = float_input(minimum=1.22, maximum=2.13)
         print(starting_mark(height))
     except ValueError:
         print("Wrong input!")
@@ -184,11 +184,11 @@ def run_sequence_sum():
     """ run sequence sum """
     try:
         print("Start of sequence: ")
-        begin_number = read_integer()
+        begin_number = integer_input()
         print("End of sequence: ")
-        end_number = read_integer()
+        end_number = integer_input()
         print("Step: ")
-        step = read_integer()
+        step = integer_input()
         print(sequence_sum(begin_number, end_number, step))
     except ValueError:
         print("Wrong input!")
@@ -215,11 +215,11 @@ def run_artificial_rain():
 def run_duty_free():
     """ This function is entry point of program"""
     print('Price')
-    price = read_integer(positive=True)
+    price = integer_input(positive=True)
     print('Discount')
-    discount = read_integer(positive=True)
+    discount = integer_input(positive=True)
     print('Holiday cost')
-    holiday_cost = read_integer(positive=True)
+    holiday_cost = integer_input(positive=True)
     print('You can buy {} bottles of whiskey:D'.format(
         duty_free(price, discount, holiday_cost)))
 
@@ -291,14 +291,13 @@ def run_zeros():
 
 def run_gap_in_primes():
     """Run gap_in_primes function."""
-    try:
-        gap = int(input("gap size: "))
-        start = int(input("start of the search, inclusive: "))
-        end = int(input("end of the search, inclusive: "))
-        print(gap_in_primes(gap, start, end))
-    except (ValueError, NameError):
-        print("Input value must be an integer number")
-
+    print("Gap size = ")
+    gap = integer_input(minimum=2, positive=True)
+    print("Start position = ")
+    start = integer_input(minimum=3, positive=True)
+    print("End position = ")
+    end = integer_input(minimum=start, positive=True)
+    print(gap_in_primes(gap, start, end))
 
 
 def run_variance_rainfall():
@@ -308,38 +307,35 @@ def run_variance_rainfall():
         strng = str(input("Average rainfall per month (with '\n' separator): "))
         print(variance_rainfall(town, strng))
     except (ValueError, NameError):
-        print("Input values must be a 'str' type and in quotation marks")
+        print("Input values must be a 'str' type")
 
 
 
 def run_where_is_vasya():
     """Find a number of possible positions Vasya can ocupy."""
-    try:
-        total = int(input("number of people in line: "))
-        in_front = int(input("in front of Vasya (no less than): "))
-        print(where_is_vasya(total, in_front))
-    except (ValueError, NameError):
-        print("Input value must be an integer value")
+    print("Number of people in line = ")
+    total = integer_input(positive=True)
+    print("In front of Vasya (no less than) = ")
+    in_front = integer_input(maximum=total-1, positive=True)
+    print(where_is_vasya(total, in_front))
 
 
 def run_volume_of_a_cuboid():
     """Run calculation pf a volume of a cuboid."""
-    try:
-        length = float(input("length: "))
-        width = float(input("width: "))
-        height = float(input("height: "))
-        print(volume_of_a_cuboid(length, width, height))
-    except (ValueError, NameError):
-        print("Input value must be a number")
+    print("Length of a cuboid = ")
+    length = float_input(positive=True)
+    print("Width of a cuboid = ")
+    width = float_input(positive=True)
+    print("Height of a cuboid = ")
+    height = float_input(positive=True)
+    print(volume_of_a_cuboid(length, width, height))
 
 
 def run_miles_per_gallon_to_kilometers_per_liter():
     """Run conversion from miles per gallon into kilometers per liter."""
-    try:
-        miles_per_g = float(input("miles per imperial gallon: "))
-        print(miles_per_gallon_to_kilometers_per_liter(miles_per_g))
-    except (ValueError, NameError):
-        print("Input value must be a number")
+    print("Miles per imperial gallon = ")
+    miles_per_g = float_input(positive=True)
+    print(miles_per_gallon_to_kilometers_per_liter(miles_per_g))
 
 
 def run_am_i_wilson():
@@ -457,7 +453,7 @@ def run_circle_area():
 def run_divisible_by():
     """Runs divisible_by function"""
     array = integer_list_input()
-    divisor = read_integer(positive=True)
+    divisor = integer_input(positive=True)
     divisible = divisible_by(array, divisor)
     expression = "Numbers that are divisible by {}: {}".format(divisor, divisible) \
         if divisible else "None of given numbers are divisible by {}".format(divisor)
@@ -467,7 +463,7 @@ def run_divisible_by():
 def run_series_sum():
     """Runs series_sum function"""
     print("Input a term:")
-    term = read_integer(positive=True)
+    term = integer_input(positive=True)
     series = series_sum(term)
     print("Sum of the series upto {} term is: {}".format(term, series))
 
@@ -475,7 +471,7 @@ def run_series_sum():
 def run_find_nb():
     """Runs find_nb function"""
     print("The volume: ")
-    volume = read_integer(positive=True)
+    volume = integer_input(positive=True)
     cubes = find_nb(volume)
     expression = "The number of cubes is: {}".format(cubes) \
         if not cubes == -1 else "Cannot find number of cubes for given volume"
