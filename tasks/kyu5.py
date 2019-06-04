@@ -129,9 +129,9 @@ def artificial_rain(garden):
 
 def zeros(num):
     """
-    Calculate the number of trailing zeros in a factorial of a given number and return number
-    :param: num: int : Input number.
-    :return: int : Number of the zeros.
+    Calculate the number of trailing zeros in a factorial of a given number and return number.
+    :param num: int : Input number.
+    :return: int : Number of the zeros
     """
     i = 5
     num_of_zeros = 0

@@ -234,28 +234,25 @@ def run_validate_usr():
 
 def run_fix_the_meerkat():
     """Run fix_the_meerkat function"""
-    print(fix_the_meerkat(["tail", "body", "head"]))
+    animal = ['', '', '']
+    animal[0] = input("Please enter 'tail': ").lower()
+    animal[1] = input("Please enter 'body': ").lower()
+    animal[2] = input("Please enter 'head': ").lower()
+    print(fix_the_meerkat(animal))
 
 
 
 def run_square_or_square_root():
     """Run square_or_square_root function"""
-    try:
-        input_ = input("Enter a sequence of numbers separated by a space: ")
-        input_list = [int(number) for number in input_.split(' ')]
-        print(square_or_square_root(input_list))
-    except ValueError:
-        print("You must enter only numbers.")
+    input_list = integer_list_input()
+    print(square_or_square_root(input_list))
 
 
 def run_replicate():
     """Run replicate function"""
-    try:
-        times = int(input("a: "))
-        number = int(input("b: "))
-        print(replicate(times, number))
-    except ValueError:
-        print("You must input only numbers.")
+    times = integer_input(positive=True)
+    number = integer_input(positive=True)
+    print(replicate(times, number))
 
 
 def run_nba_cup():
@@ -281,12 +278,8 @@ def run_triple_shiftian():
 
 def run_zeros():
     """Run zeros function"""
-    try:
-        number = int(input("Enter number   "))
-        print(zeros(number))
-    except ValueError:
-        print("You should enter number.")
-
+    number = integer_input(positive=True)
+    print(zeros(number))
 
 
 def run_gap_in_primes():

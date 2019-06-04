@@ -169,26 +169,29 @@ def validate_usr(username: str) -> bool:
     return False
 
 
-def fix_the_meerkat(arr):
+def fix_the_meerkat(animal):
     """
     Change the order of elements in list
-    :param: arr: list : The list of parts of the body.
-    :return: arr list : List of parts of the body in correct order
+    :param animal: list : The list of parts of the body.
+    :return: animal: list : List of parts of the body in correct order
     """
-    tail = arr[0]
-    arr[0] = arr[2]
-    arr[2] = tail
-    return arr
+    if animal[0] != 'tail' or animal[1] != 'body' or animal[2] != 'head':
+        return 'Wrong input!'
+
+    tail = animal[0]
+    animal[0] = animal[2]
+    animal[2] = tail
+    return animal
 
 
-def square_or_square_root(arr):
+def square_or_square_root(numbers):
     """
     If the number has an integer square root, take this, otherwise square the number.
-    :param: arr: list : The list of numbers.
-    :return: arr list : Modified list.
+    :param numbers: list : The list of numbers.
+    :return: list : Modified list.
     """
     result = []
-    for element in arr:
+    for element in numbers:
         root = element ** 0.5
         if root.is_integer():
             result.append(int(root))
