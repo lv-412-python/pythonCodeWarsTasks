@@ -77,43 +77,33 @@ def get_docstring(func=None):
     except:
         print("Sorry, but I don't have this function")
 
+
 def run_bouncing_ball():
-    """
-    Runs bouncing_ball function.
-    """
-    try:
-        height = float(input("Enter height(must be greater than 1.5): "))
-        bounce = float(input("Enter bounce of the ball(between 0 and 1): "))
-        print(bouncing_ball(height, bounce))
-    except ValueError:
-        print("Wrong input!")
+    """Runs bouncing_ball function."""
+    print("Enter height(must be greater than 1.5): ")
+    height = float_input(minimum=1.5)
+    print("Enter bounce of the ball(between 0 and 1): ")
+    bounce = float_input(minimum=0, maximum=1)
+    print("Ball will be seen from the window this amount of times: {}".format(
+        bouncing_ball(height, bounce)))
 
 
 def run_heads_legs():
-    """
-    Runs heads_legs function.
-    """
-    try:
-        heads = int(input("Enter the amount of heads on the farm: "))
-        legs = int(input("Enter the amount of legs on the farm: "))
-        while heads > 1000 or legs > 1000:
-            print("Wrong input! Both numbers must be positive integers not greater than 1000.")
-            heads = int(input("Enter the amount of heads on the farm: "))
-            legs = int(input("Enter the amount of legs on the farm: "))
-        print(heads_legs(heads, legs))
-    except ValueError:
-        print("Wrong input!")
+    """Runs heads_legs function."""
+    print("Enter the amount of heads on the farm: ")
+    heads = integer_input(maximum=1000, positive=True)
+    print("Enter the amount of legs on the farm: ")
+    legs = integer_input(maximum=1000, positive=True)
+    print("Number of chickens and rabbits is: {}".format(
+        heads_legs(heads, legs)))
 
 
 def run_fib_product():
-    """
-    Runs fib_product function.
-    """
-    try:
-        prod = int(input("Enter product of 2 numbers: "))
-        print(fib_product(prod))
-    except ValueError:
-        print("Wrong input!")
+    """Runs fib_product function."""
+    print("Enter product of 2 numbers: ")
+    prod = integer_input(positive=True)
+    print("Entered number is a product of these two numbers: {}".format(
+        fib_product(prod)))
 
 
 def run_sum_of_square():
@@ -145,18 +135,15 @@ def run_interp():
     print('Your intermediate results: {}'.format(interp(func, l_a, u_b, n_c)))
 
 
-
 def run_short_long_short():
-    """
-    Runs short_long_short function.
-    """
+    """Runs short_long_short function."""
     first_str = input("Enter string: ")
     second_str = input("Enter another string: ")
     while len(first_str) == len(second_str):
         print("String can't be the same length.")
         first_str = input("Enter string: ")
         second_str = input("Enter another string: ")
-    print(short_long_short(first_str, second_str))
+    print("The result of short+long+short concatenation is {}:".format(short_long_short(first_str, second_str)))
 
 
 def run_moving_shift():
@@ -167,7 +154,6 @@ def run_moving_shift():
     encrypted_message = moving_shift(plain_text, shift)
     print('Your encrypted message: {}'.format(encrypted_message))
     print('Your decrypted message: {}'.format(demoving_shift(encrypted_message, shift)))
-
 
 
 def run_starting_mark():
@@ -224,10 +210,8 @@ def run_duty_free():
         duty_free(price, discount, holiday_cost)))
 
 
-
 def run_validate_usr():
     """ This function is entry point of program"""
-
     username = str(input("Enter your username: "))
     print((validate_usr(username)))
 
@@ -239,7 +223,6 @@ def run_fix_the_meerkat():
     animal[1] = input("Please enter 'body': ").lower()
     animal[2] = input("Please enter 'head': ").lower()
     print(fix_the_meerkat(animal))
-
 
 
 def run_square_or_square_root():
@@ -262,18 +245,12 @@ def run_nba_cup():
 
 
 def run_triple_shiftian():
-    """
-    Runs triple_shiftian function.
-    """
-    first_three_elements = list()
-    try:
-        first_three_elements.append(int(input("Enter 1st element of Triple Shiftian: ")))
-        first_three_elements.append(int(input("Enter 2nd element of Triple Shiftian: ")))
-        first_three_elements.append(int(input("Enter 3rd element of Triple Shiftian: ")))
-        num = int(input("Enter sequence number: "))
-        print(triple_shiftian(first_three_elements, num))
-    except ValueError:
-        print("Wrong input! All variables should be integers.")
+    """Runs triple_shiftian function."""
+    print("Enter first three elements of Triple Shiftian: ")
+    first_three_elements = integer_list_input(length=3)
+    print("Enter sequence number: ")
+    num = integer_input(positive=True)
+    print("The {}th element of Triple Shiftian is: {}".format(num, triple_shiftian(first_three_elements, num)))
 
 
 def run_zeros():
@@ -301,7 +278,6 @@ def run_variance_rainfall():
         print(variance_rainfall(town, strng))
     except (ValueError, NameError):
         print("Input values must be a 'str' type")
-
 
 
 def run_where_is_vasya():
@@ -458,7 +434,7 @@ def run_series_sum():
     print("Input a term:")
     term = integer_input(positive=True)
     series = series_sum(term)
-    print("Sum of the series upto {} term is: {}".format(term, series))
+    print("Sum of the series up to {} term is: {}".format(term, series))
 
 
 def run_find_nb():
