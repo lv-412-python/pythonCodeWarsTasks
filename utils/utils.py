@@ -21,11 +21,11 @@ def integer_list_input(length=None):
     return result if result else integer_list_input(length)
 
 
-def float_input(min_val=None, max_val=None, positive=False):
+def float_input(minimum=None, maximum=None, positive=False):
     """Read float number.
 
-    :param min_val: float : minimal value (inclusive).
-    :param max_val: float : maximal value (inclusive).
+    :param minimum: float : minimal value (inclusive).
+    :param maximum: float : maximal value (inclusive).
     :param positive: boolean : true if positive number is needed.
 
     :returns: float : if input is float and fit conditions (if they are).
@@ -35,48 +35,46 @@ def float_input(min_val=None, max_val=None, positive=False):
     try:
         result = float(input("Enter float number: "))
     except ValueError:
-        print("Wrong input. Must be a float number and fit conditions (if they are)")
+        print("Incorrect input, must be float that fit conditions (if conditions exist)!")
     if result is not None:
-        if min_val and result < min_val:
-            print("Wrong input. Number must be greater or equal %.2f" % min_val)
-            result = float_input(min_val, max_val, positive)
-        if max_val and result > max_val:
-            print(f"Wrong input. Number must be less or equal %.2f" % max_val)
-            result = float_input(min_val, max_val, positive)
+        if minimum and result < minimum:
+            print("Incorrect input. Number must be greater or equal %.2f" % minimum)
+            result = float_input(minimum, maximum, positive)
+        if maximum and result > maximum:
+            print("Incorrect input. Number must be less or equal %.2f" % maximum)
+            result = float_input(minimum, maximum, positive)
         if positive and result < 0:
-            print("Wrong input. Number must be positive or 0")
-            result = float_input(min_val, max_val, positive)
+            print("Incorrect input. Number must be positive or 0")
+            result = float_input(minimum, maximum, positive)
     else:
-        result = float_input(min_val, max_val, positive)
+        result = float_input(minimum, maximum, positive)
     return result
 
-def read_integer(minimum=None, maximum=None, positive=False):
-    """Read int number. Can take arguments:
-    :param args[0]: int : max value.
-    or
-    :param args[0]: int : min value.
-    :param args[1]: int : max value.
+def integer_input(minimum=None, maximum=None, positive=False):
+    """Read integer number.
 
-    :param kwargs["positive"]: boolean : True if positive number is needed.
+    :param minimum: int : minimal value (inclusive).
+    :param maximum: int : maximal value (inclusive).
+    :param positive: boolean : true if positive number is needed.
 
     :returns: int : if input is int and fit conditions (if they are).
-    :returns: read_integer()  if caught ValueError.
+    :returns: integer_input if caught ValueError.
     """
     data = None
     try:
         data = int(input("Enter integer please: "))
     except ValueError:
-        print('Incorrect input, must be only integers that fit conditions (if conditions exists)!')
+        print('Incorrect input, must be only integers that fit conditions (if conditions exist)!')
     if data is not None:
         if minimum and data < minimum:
-            print('Wrong input, must be only integers that fit conditions (if conditions exists)!')
-            data = read_integer(minimum, maximum, positive)
+            print("Incorrect input. Number must be greater or equal %d" % minimum)
+            data = integer_input(minimum, maximum, positive)
         if maximum and data > maximum:
-            print('Wrong input, must be only integers that fit conditions (if conditions exists)!')
-            data = read_integer(minimum, maximum, positive)
+            print("Incorrect input. Number must be less or equal %d" % maximum)
+            data = integer_input(minimum, maximum, positive)
         if positive and data < 0:
-            print('Wrong input, must be only integers that fit conditions (if conditions exists)!')
-            data = read_integer(minimum, maximum, positive)
+            print("Incorrect input. Number must be positive or 0")
+            data = integer_input(minimum, maximum, positive)
     else:
-        data = read_integer(minimum, maximum, positive)
+        data = integer_input(minimum, maximum, positive)
     return data
