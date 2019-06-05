@@ -173,7 +173,7 @@ def nba_cup(result_sheet, to_find):
     for game in result_sheet.split(','):
         matched = re.search(r'^(.*?) (\d+) (.*?) (\d+)$', game)
         if not matched:
-            return f'Error(float number):{game}'
+            return f'Error(float number):{game.title()}'
         teams = {
             "f_team": '',
             "f_score": 0,
@@ -200,7 +200,7 @@ def nba_cup(result_sheet, to_find):
             draws += 1
             points += 1
     if wins == draws == losses == 0:
-        return f"{to_find}:This team didn't play!"
+        return f"{to_find.title()}:This team didn't play!"
     return f'{to_find.title()}:W={wins};\
     D={draws};\
     L={losses};\
