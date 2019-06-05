@@ -115,12 +115,9 @@ def run_sum_of_square():
 
 def run_litres():
     """ run litres """
-    try:
-        print("Enter time of the run")
-        time = float_input(positive=True)
-        print(litres(time))
-    except ValueError:
-        print("Wrong input!")
+    print("Enter time of the run")
+    time = float_input(positive=True)
+    print('You need {} litres of water'.format(litres(time)))
 
 
 def run_interp():
@@ -158,44 +155,32 @@ def run_moving_shift():
 
 def run_starting_mark():
     """ run starting_mark """
-    try:
-        print("Enter height:")
-        height = float_input(minimum=1.22, maximum=2.13)
-        print(starting_mark(height))
-    except ValueError:
-        print("Wrong input!")
+    print("Enter athlete height between 1.22 and 2.13 meters:")
+    height = float_input(minimum=1.22, maximum=2.13)
+    print("best starting mark is {} meters from pole".format(starting_mark(height)))
 
 
 def run_sequence_sum():
     """ run sequence sum """
-    try:
-        print("Start of sequence: ")
-        begin_number = integer_input()
-        print("End of sequence: ")
-        end_number = integer_input()
-        print("Step: ")
-        step = integer_input()
-        print(sequence_sum(begin_number, end_number, step))
-    except ValueError:
-        print("Wrong input!")
-
+    print("Start of sequence: ")
+    begin_number = integer_input()
+    print("End of sequence: ")
+    end_number = integer_input()
+    print("Step: ")
+    step = integer_input()
+    print("sum of sequence = {}".format(sequence_sum(begin_number, end_number, step)))
 
 def run_approximation():
     """ run approximation """
-    try:
-        number = float_input(positive=True)
-        print(approximation(number))
-    except ValueError:
-        print("Wrong input!")
+    number = float_input(positive=True)
+    print(print("approximation of {} near 0 = {}".format(number, approximation(number))))
 
 
 def run_artificial_rain():
     """ run artificial rain """
-    try:
-        garden = integer_list_input()
-        print(artificial_rain(garden))
-    except ValueError:
-        print('Wrong input!')
+    print("enter sections of your garden")
+    garden = integer_list_input()
+    print("maximal number of watered sections: {}".format(artificial_rain(garden)))
 
 
 def run_duty_free():
