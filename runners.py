@@ -259,7 +259,8 @@ def run_variance_rainfall():
     """Calculates variance of rainfall in the city."""
     try:
         town = str(input("Place: "))
-        strng = str(input("Average rainfall per month (with '\n' separator): "))
+        strng = str(input("Rainfall records from Jan to Dec. Separated by \\n. \
+        The name of each town is followed by ':': "))
         print(variance_rainfall(town, strng))
     except (ValueError, NameError):
         print("Input values must be a 'str' type")
@@ -271,7 +272,9 @@ def run_where_is_vasya():
     total = integer_input(positive=True)
     print("In front of Vasya (no less than) = ")
     in_front = integer_input(maximum=total-1, positive=True)
-    print(where_is_vasya(total, in_front))
+    print("Behind Vasya (no more than) = ")
+    behind = integer_input(maximum=total-1, positive=True)
+    print(where_is_vasya(total, in_front, behind))
 
 
 def run_volume_of_a_cuboid():
