@@ -131,12 +131,9 @@ def test_divisible_by():
     assert divisible_by([1, 3, 5], 2) == []
     with pytest.raises(ZeroDivisionError) as zero_div:
         assert divisible_by([1, 2, 3, 4, 5, 6], 0) is zero_div
-    with pytest.raises(NameError) as name_err:
-        assert divisible_by([1, 2, 3, 4, 5, 6], a) is name_err
-
 
 def test_circle_area():
-    """Tests circle_area function"""
+    """Test circle_area function"""
     assert round(circle_area(Circle(Point(10, 10), 30)), 6) == 2827.433388
     assert round(circle_area(Circle(Point(25, -70), 30)), 6) == 2827.433388
     assert round(circle_area(Circle(Point(-15, 5), 0)), 6) == 0

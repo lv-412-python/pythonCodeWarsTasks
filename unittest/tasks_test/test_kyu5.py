@@ -1,7 +1,6 @@
 """Tests for 5kyu module"""
 
 import pytest
-
 from tasks.kyu5 import (
     fib_product,
     moving_shift,

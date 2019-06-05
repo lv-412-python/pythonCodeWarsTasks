@@ -106,9 +106,8 @@ def test_balance(parameter):
     string, result = parameter
     assert balance(string) == result
 
-
 def test_find_nb():
-    """Tests find_nb function"""
+    """Test find_nb function"""
     assert find_nb(4183059834009) == 2022
     assert find_nb(24723578342962) == -1
     assert find_nb(135440716410000) == 4824
