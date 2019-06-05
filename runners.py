@@ -361,11 +361,9 @@ def run_angle():
     """
         Runs angle function.
     """
-    try:
-        number = int(input("number of angles: "))
-        print(angle(number))
-    except ValueError:
-        print("Invalid input. It should be int")
+    print("Input number of angles")
+    number = integer_input(minimum=3, positive=True)
+    print(angle(number))
 
 
 def run_consonant_value():
@@ -383,11 +381,10 @@ def run_prime_factors():
     """
         Runs prime_factors function.
     """
-    try:
-        name = input("number: ")
-        print('it`s primes: ' + prime_factors(int(name)))
-    except ValueError:
-        print('Please enter integer')
+    print("number: ")
+    num = integer_input(minimum=1, positive=True)
+    print('it`s primes: ' + prime_factors(int(num)))
+
 
 
 def run_circle_area():

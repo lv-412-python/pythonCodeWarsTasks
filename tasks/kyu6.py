@@ -282,6 +282,8 @@ def consonant_value(string):
     """
     sub_val = []
     # Split string into substrings on vowels
+    string = string.lower()
+
     string = re.sub('[aeiou]', ' ', string)
     substrings = string.split(' ')
 
