@@ -1,4 +1,5 @@
 """Tests for 7kyu module"""
+
 import pytest
 
 from tasks.kyu7 import (
@@ -80,3 +81,26 @@ def test_where_is_vasya(people, bef, aft, expected_output):
     """Tests where_is_vasya function."""
     result = where_is_vasya(people, bef, aft)
     assert result == expected_output
+    with pytest.raises(TypeError) as type_err:
+        assert where_is_vasya('a') is type_err
+
+
+@pytest.mark.parametrize('data', [
+    (2, 6, 2, 12),
+    (1, 5, 1, 15),
+    (1, 5, 3, 5),
+    (0, 15, 3, 45),
+    (16, 15, 3, 0),
+    (2, 24, 22, 26),
+    (2, 2, 2, 2),
+    (2, 2, 1, 2),
+    (1, 15, 3, 35),
+    (15, 1, 3, 0)
+    ])
+
+def test_sequence_sum(data):
+    '''Tests sequence_sum function'''
+    begin_number, end_number, step, result = data
+    assert sequence_sum(begin_number, end_number, step) == result
+    with pytest.raises(TypeError) as type_err:
+        assert sequence_sum(1.23, 'asd', (1, 2)) is type_err

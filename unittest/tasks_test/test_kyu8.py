@@ -134,8 +134,8 @@ def test_circle_area():
     assert round(circle_area(Circle(Point(25, -70), 30)), 6) == 2827.433388
     assert round(circle_area(Circle(Point(-15, 5), 0)), 6) == 0
     assert round(circle_area(Circle(Point(-15, 5), 12.5)), 6) == 490.873852
-    with pytest.raises(TypeError) as type_err:
-        assert circle_area('a') is type_err
+    with pytest.raises(AttributeError) as attr_err:
+        assert circle_area('a') is attr_err
 
 
 @pytest.mark.parametrize("length, width, height, expected_output", [
@@ -147,6 +147,8 @@ def test_volume_of_a_cuboid(length, width, height, expected_output):
     """Tests volume_of_a_cuboid function."""
     result = volume_of_a_cuboid(length, width, height)
     assert result == expected_output
+    with pytest.raises(TypeError) as type_err:
+        assert volume_of_a_cuboid('a', 'b', 'c') is type_err
 
 
 @pytest.mark.parametrize("miles_per_gallon, expected_output", [
@@ -160,3 +162,37 @@ def test_miles_per_gallon_to_kilometers_per_liter(miles_per_gallon, expected_out
     """Tests miles_per_gallon_to_kilometers_per_liter function."""
     result = miles_per_gallon_to_kilometers_per_liter(miles_per_gallon)
     assert result == expected_output
+    with pytest.raises(TypeError) as type_err:
+        assert miles_per_gallon_to_kilometers_per_liter('a') is type_err
+
+
+@pytest.mark.parametrize("data", [
+    (2, 1),
+    (1.4, 0),
+    (12.3, 6),
+    (0.82, 0),
+    (11.8, 5),
+    (1787, 893),
+    (0, 0)
+    ])
+def test_litres(data):
+    '''test litres function'''
+    time, amount_litres = data
+    assert litres(time) == amount_litres
+    with pytest.raises(TypeError) as type_err:
+        assert litres('qwerty') is type_err
+
+
+@pytest.mark.parametrize('data', [
+    (1.52, 9.45),
+    (1.83, 10.67),
+    (1.22, 8.27),
+    (2.13, 11.85),
+    (1.75, 10.36)
+    ])
+def test_starting_mark(data):
+    '''test starting_mark function'''
+    height, result = data
+    assert starting_mark(height) == result
+    with pytest.raises(TypeError) as type_err:
+        assert starting_mark('qwerty') is type_err

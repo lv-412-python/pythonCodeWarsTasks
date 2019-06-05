@@ -1,6 +1,7 @@
 """Tests for 5kyu module"""
 
 import pytest
+
 from tasks.kyu5 import (
     fib_product,
     moving_shift,
@@ -83,9 +84,24 @@ def test_gap_in_primes(arg_list, expected_output):
     """Tests gap_in_primes function."""
     result = gap_in_primes(arg_list[0], arg_list[1], arg_list[2])
     assert result == expected_output
+    with pytest.raises(TypeError) as type_err:
+        assert gap_in_primes('1', '1', '1') is type_err
 
 
 def test_gap_in_primes_none():
     """Tests gap_in_primes function, when there's none output."""
     result = gap_in_primes(6, 100, 110)
     assert result is None
+
+
+@pytest.mark.parametrize('data', [
+    ([2], 1),
+    ([1, 2, 1, 2, 1], 3),
+    ([4, 2, 3, 3, 2], 4)
+    ])
+def test_artificial_rain(data):
+    '''Tests artificial_rain function'''
+    garden, result = data
+    assert artificial_rain(garden) == result
+    with pytest.raises(KeyError) as key_err:
+        assert artificial_rain({1:'1', 2:'2'}) is key_err
