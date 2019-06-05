@@ -148,7 +148,7 @@ def gap_in_primes(gap, start, end):
     :param start: int : Gives the start number of the search (inclusive).
     :param end: int : Gives the end number of the search (inclusive).
 
-    :return: tuple: The pair of two successive primes between start and end.
+    :return: list: The pair of two successive primes between start and end.
     :return: None: When there is no two successive prime numbers between start and end.
 
     """
@@ -168,7 +168,7 @@ def gap_in_primes(gap, start, end):
     i = 0
     while i < len(primes) - 1:
         if primes[i + 1] - primes[i] == gap:
-            return (primes[i], primes[i + 1])
+            return [primes[i], primes[i + 1]]
         i += 1
 
     return None

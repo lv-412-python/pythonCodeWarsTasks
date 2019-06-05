@@ -1,7 +1,17 @@
 """Tests for 5kyu module"""
 
 import pytest
-from tasks.kyu5 import fib_product, zeros, prime_factors, smallest
+from tasks.kyu5 import (
+    fib_product,
+    moving_shift,
+    demoving_shift,
+    artificial_rain,
+    zeros,
+    gap_in_primes,
+    smallest,
+    prime_factors,
+    solve
+)
 
 
 @pytest.mark.parametrize('product, expected_output', [
@@ -43,3 +53,14 @@ def test_smallest(parameter):
     """Tests smallest function"""
     number, result = parameter
     assert smallest(number) == result
+
+def test_solve():
+    """ Test solve function"""
+    assert solve(2.00) == pytest.approx(5.000000000000e-01, 1e-12)
+    assert solve(4.00) == pytest.approx(6.096117967978e-01, 1e-12)
+    assert solve(5.00) == pytest.approx(6.417424305044e-01, 1e-12)
+    assert solve(8.0) == pytest.approx(0.7034648345913732, 1e-12)
+    with pytest.raises(TypeError) as type_err:
+        assert solve('a') is type_err
+    with pytest.raises(ZeroDivisionError) as zero_div:
+        assert solve(0) is zero_div

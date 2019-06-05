@@ -1,6 +1,15 @@
 """Tests for 6kyu module"""
 import pytest
-from tasks.kyu6 import bouncing_ball, nba_cup, R, consonant_value, balance
+from tasks.kyu6 import (
+    interp,
+    approximation,
+    bouncing_ball,
+    nba_cup, R,
+    variance_rainfall,
+    balance,
+    consonant_value,
+    find_nb
+)
 
 
 @pytest.mark.parametrize('height, bounce, expected_output', [
@@ -90,3 +99,14 @@ def test_balance(parameter):
     """Tests balance function"""
     string, result = parameter
     assert balance(string) == result
+
+def test_find_nb():
+    """Test find_nb funcrion"""
+    assert find_nb(4183059834009) == 2022
+    assert find_nb(24723578342962) == -1
+    assert find_nb(135440716410000) == 4824
+    assert find_nb(40539911473216) == 3568
+    assert find_nb(26825883955641) == 3218
+    assert find_nb(0) == 0
+    with pytest.raises(TypeError) as type_err:
+        assert find_nb('a') is type_err

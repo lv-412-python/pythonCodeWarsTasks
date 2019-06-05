@@ -1,7 +1,16 @@
 """Tests for 7kyu module"""
 import pytest
 
-from tasks.kyu7 import triple_shiftian, replicate, angle, new_avg
+from tasks.kyu7 import (
+    sum_of_square,
+    sequence_sum,
+    triple_shiftian,
+    replicate,
+    where_is_vasya,
+    new_avg,
+    angle,
+    series_sum
+)
 
 
 @pytest.mark.parametrize('first_three_elements,num,expected_output', [
@@ -49,3 +58,13 @@ def test_new_avg():
     """Tests new_avg function"""
     with pytest.raises(ValueError):
         new_avg([14, 30, 5, 7, 9, 11, 15], 2)
+
+def test_series_sum():
+    """Test series_sum function """
+    assert series_sum(1) == "1.00"
+    assert series_sum(2) == "1.25"
+    assert series_sum(3) == "1.39"
+    assert series_sum(5) == "1.57"
+    with pytest.raises(TypeError) as type_err:
+        assert series_sum('a') is type_err
+    assert series_sum(-5) == '1.00'
