@@ -175,9 +175,6 @@ def fix_the_meerkat(animal):
     :param animal: list : The list of parts of the body.
     :return: animal: list : List of parts of the body in correct order
     """
-    if animal[0] != 'tail' or animal[1] != 'body' or animal[2] != 'head':
-        return 'Wrong input!'
-
     tail = animal[0]
     animal[0] = animal[2]
     animal[2] = tail
