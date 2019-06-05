@@ -11,6 +11,7 @@ from tasks.kyu7 import triple_shiftian, replicate
 def test_triple_shiftian(first_three_elements, num, expected_output):
     """Test triple_shiftian function"""
     result = triple_shiftian(first_three_elements, num)
+    assert result == expected_output
 
 
 @pytest.mark.parametrize('times, number, expected_output',

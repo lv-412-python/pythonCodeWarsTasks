@@ -9,11 +9,13 @@ from tasks.kyu6 import bouncing_ball, nba_cup, R
 def test_bouncing_ball(height, bounce, expected_output):
     """Test bouncing_ball function"""
     result = bouncing_ball(height, bounce)
+    assert result == expected_output
 
 @pytest.mark.parametrize('result_sheet, to_find, expected_output',
                          [
                              (R, "Boston Celtics",
-                              "Boston Celtics:W=4;D=0;L=0;Scored=403;Conceded=350;Points=12"),
+                              "Boston Celtics:W=4;    D=0;    L=0;    Scored=403;\
+    Conceded=350;    Points=12"),
                              (R, "Boston Celt",
                               "Boston Celt:This team didn't play!")
                          ])

@@ -9,6 +9,7 @@ from tasks.kyu5 import fib_product, zeros
 def test_fib_product(product, expected_output):
     """Test fib_product function"""
     result = fib_product(product)
+    assert result == expected_output
 
 @pytest.mark.parametrize('num, expected_output',
                          [

@@ -25,6 +25,7 @@ def test_heads_legs(heads, legs, expected_output):
 def test_short_long_short(first, second, expected_output):
     """Test head_legs function"""
     result = short_long_short(first, second)
+    assert result == expected_output
 
 
 @pytest.mark.parametrize('animal,expected_output',
