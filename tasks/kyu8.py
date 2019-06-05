@@ -6,7 +6,7 @@ Task solution:
 import re
 from math import pi
 
-ALLOWED_CHARACTERS_PATTERN = r'^[a-z0-9]\S*$'
+ALLOWED_CHARACTERS_PATTERN = r'^[a-z0-9_]*$'
 MIN_USERNAME_LENGHT = 4
 MAX_USERNAME_LENGHT = 16
 LINEAR_RELATION = 3.9355
@@ -152,7 +152,7 @@ def duty_free(price: int, discount: int, holiday_cost: int) -> int:
         return holiday_cost
 
     discount /= 100
-    price = holiday_cost / (price - price * discount)
+    price = holiday_cost / (price * discount)
     price = int(price)
     return price
 

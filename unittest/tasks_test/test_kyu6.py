@@ -1,4 +1,5 @@
 """Tests for 6kyu module"""
+
 import pytest
 from tasks.kyu6 import (
     interp,
@@ -77,7 +78,7 @@ Average expense  39.65"""), ("""1233.00
 129 Stamps 13.6
 129 Fruits{} 17.6
 129 Market;! 128.00?;
-121 Gasoline;! 13.6?;""",  """Original Balance: 1233.00\r
+121 Gasoline;! 13.6?;""", """Original Balance: 1233.00\r
 125 Hardware 24.80 Balance 1208.20\r
 123 Flowers 93.50 Balance 1114.70\r
 127 Meat 120.90 Balance 993.80\r
@@ -121,5 +122,20 @@ def test_find_nb():
 def test_variance_rainfall(city, strng, expected_output):
     """Tests variance_rainfall function."""
     result = variance_rainfall(city, strng)
-    print(result)
     assert pytest.approx(result, 1e-6) == expected_output
+    with pytest.raises(AttributeError) as attr_err:
+        assert variance_rainfall((1, 1), (2,3)) is attr_err
+
+
+@pytest.mark.parametrize('data', [
+    (2.6e-08, 1.2999999915500002e-08),
+    (1.4e-09, 6.999999997549999e-10),
+    (5.0e-06, 2.499996875007813e-06),
+    (2.4e-07, 1.1999999280000087e-07)
+    ])
+def test_approximation(data):
+    '''Tests approximation function'''
+    num, result = data
+    assert approximation(num) == result
+    with pytest.raises(TypeError) as type_err:
+        assert approximation((1, 2)) is type_err
