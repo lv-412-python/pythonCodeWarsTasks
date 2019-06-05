@@ -1,7 +1,7 @@
 """Tests for 7kyu module"""
 import pytest
 
-from tasks.kyu7 import triple_shiftian, replicate, angle
+from tasks.kyu7 import triple_shiftian, replicate, angle, new_avg
 
 
 @pytest.mark.parametrize('first_three_elements,num,expected_output', [
@@ -37,3 +37,14 @@ def test_angle(number, expected_result):
     """Test angle function."""
     result = angle(number)
     assert result == expected_result
+
+
+def test_new_avg1():
+    """Tests new_avg function"""
+    assert new_avg([14, 30, 5, 7, 9, 11, 15], 92) == 645
+
+
+def test_new_avg():
+    """Tests new_avg function"""
+    with pytest.raises(ValueError):
+        new_avg([14, 30, 5, 7, 9, 11, 15], 2)

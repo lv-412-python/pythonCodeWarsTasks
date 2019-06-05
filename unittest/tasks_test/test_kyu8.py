@@ -7,7 +7,9 @@ from tasks.kyu8 import (
     fix_the_meerkat,
     square_or_square_root,
     abbrev_name,
-    bin_to_decimal
+    bin_to_decimal,
+    am_i_wilson,
+    two_decimal_places
 )
 
 
@@ -85,3 +87,17 @@ def test_bin_to_decimal(bin_n, decimal):
     """Test bin_to_decimal function."""
     result = bin_to_decimal(bin_n)
     assert result == decimal
+
+
+@pytest.mark.parametrize("parameter", [(13, True), (563, True), (1, False)])
+def test_am_i_wilson(parameter):
+    """Tests am_i_wilson function"""
+    number, result = parameter
+    assert am_i_wilson(number) is result
+
+
+@pytest.mark.parametrize("parameter", [(5.5589, 5.56), (3.3424, 3.34)])
+def test_two_decimal_places(parameter):
+    """Tests two_decimal_places function"""
+    number, result = parameter
+    assert two_decimal_places(number) == result

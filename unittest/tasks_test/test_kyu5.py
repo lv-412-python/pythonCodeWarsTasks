@@ -1,7 +1,7 @@
 """Tests for 5kyu module"""
 
 import pytest
-from tasks.kyu5 import fib_product, zeros, prime_factors
+from tasks.kyu5 import fib_product, zeros, prime_factors, smallest
 
 
 @pytest.mark.parametrize('product, expected_output', [
@@ -34,3 +34,11 @@ def test_prime_factor(number, expected_output):
     """Test prime_factor function."""
     result = prime_factors(number)
     assert result == expected_output
+
+
+@pytest.mark.parametrize("parameter",
+                         [(261235, [126235, 2, 0]), (187863002809, [18786300289, 10, 0])])
+def test_smallest(parameter):
+    """Tests smallest function"""
+    number, result = parameter
+    assert smallest(number) == result
