@@ -37,7 +37,7 @@ def test_replicate(times, number, expected_output):
     result = replicate(times, number)
     assert result == expected_output
     with pytest.raises(TypeError) as type_error:
-        assert replicate("1", [1]) is type_error
+        assert replicate("2", [1]) is type_error
 
 
 @pytest.mark.parametrize('number, expected_result',

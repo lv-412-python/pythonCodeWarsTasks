@@ -73,7 +73,7 @@ def test_square_or_square_root(numbers, expected_output):
     result = square_or_square_root(numbers)
     assert result == expected_output
     with pytest.raises(TypeError) as type_error:
-        assert square_or_square_root("hello") is type_error
+        assert square_or_square_root("str") is type_error
 
 
 @pytest.mark.parametrize('name, abbrev',
