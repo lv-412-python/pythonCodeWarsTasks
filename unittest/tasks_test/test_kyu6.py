@@ -35,7 +35,7 @@ def test_nba_cup(result_sheet, to_find, expected_output):
     result = nba_cup(result_sheet, to_find)
     assert result == expected_output
     with pytest.raises(AttributeError) as attr_error:
-        assert nba_cup(3, 1) is attr_error
+        assert nba_cup(2, 1) is attr_error
 
 
 

@@ -32,7 +32,7 @@ def test_fib_product(product, expected_output):
                              (30, 7)
                          ])
 def test_zeros(num, expected_output):
-    """Tests zeros function"""
+    """ Tests zeros function"""
     result = zeros(num)
     assert result == expected_output
     with pytest.raises(TypeError) as type_error:
