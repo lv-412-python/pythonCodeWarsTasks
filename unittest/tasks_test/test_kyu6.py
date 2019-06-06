@@ -5,7 +5,7 @@ from tasks.kyu6 import (
     approximation,
     bouncing_ball,
     nba_cup, R,
-    variance_rainfall,
+    variance_rainfall, DATA,
     balance,
     consonant_value,
     find_nb
@@ -17,7 +17,7 @@ from tasks.kyu6 import (
     (30, 0.66, 15),
     ])
 def test_bouncing_ball(height, bounce, expected_output):
-    """Test bouncing_ball function"""
+    """Tests bouncing_ball function"""
     result = bouncing_ball(height, bounce)
     assert result == expected_output
 
@@ -30,7 +30,7 @@ def test_bouncing_ball(height, bounce, expected_output):
                               "Boston Celt:This team didn't play!")
                          ])
 def test_nba_cup(result_sheet, to_find, expected_output):
-    """test nba_cup function"""
+    """Tests nba_cup function"""
     result = nba_cup(result_sheet, to_find)
     assert result == expected_output
 
@@ -46,7 +46,7 @@ def test_nba_cup(result_sheet, to_find, expected_output):
                              ("mischtschenkoana", 80)
                          ])
 def test_consonant_value(string, expected_output):
-    """Test consonant_value function."""
+    """Tests consonant_value function."""
     result = consonant_value(string)
     assert result == expected_output
 
@@ -100,8 +100,9 @@ def test_balance(parameter):
     string, result = parameter
     assert balance(string) == result
 
+
 def test_find_nb():
-    """Test find_nb funcrion"""
+    """Tests find_nb function"""
     assert find_nb(4183059834009) == 2022
     assert find_nb(24723578342962) == -1
     assert find_nb(135440716410000) == 4824
@@ -110,3 +111,15 @@ def test_find_nb():
     assert find_nb(0) == 0
     with pytest.raises(TypeError) as type_err:
         assert find_nb('a') is type_err
+
+
+@pytest.mark.parametrize('city, strng, expected_output', [
+    ("London", DATA, 57.42833333333374),
+    ("Beijing", DATA, 4808.37138888889)],
+                         ids=["['London', data]_57.42833333333374",
+                              "['Beijing', data]_4808.37138888889)"])
+def test_variance_rainfall(city, strng, expected_output):
+    """Tests variance_rainfall function."""
+    result = variance_rainfall(city, strng)
+    print(result)
+    assert pytest.approx(result, 1e-6) == expected_output
