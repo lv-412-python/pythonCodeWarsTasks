@@ -6,4 +6,4 @@ install:
   - pip install -r requirements.txt
 
 script:
-  - pylint tasks main.py
+  - pylint tasks main.py runners.py

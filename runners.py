@@ -70,11 +70,12 @@ __all__ = ['run_bouncing_ball', 'run_heads_legs', 'run_fib_product',
            'run_consonant_value', 'run_prime_factors', 'run_circle_area', 'run_divisible_by',
            'run_series_sum', 'run_find_nb', 'run_solve']
 
+
 def get_docstring(func=None):
-    '''finds docstring'''
+    """finds docstring"""
     try:
-        print(eval(func[4:]).__doc__)
-    except:
+        print(eval(func[4:]).__doc__)  # pylint: disable=eval-used
+    except NameError:
         print("Sorry, but I don't have this function")
 
 
@@ -140,7 +141,8 @@ def run_short_long_short():
         print("String can't be the same length.")
         first_str = input("Enter string: ")
         second_str = input("Enter another string: ")
-    print("The result of short+long+short concatenation is {}:".format(short_long_short(first_str, second_str)))
+    result = short_long_short(first_str, second_str)
+    print("The result of short+long+short concatenation is {}:".format(result))
 
 
 def run_moving_shift():
@@ -235,7 +237,8 @@ def run_triple_shiftian():
     first_three_elements = integer_list_input(length=3)
     print("Enter sequence number: ")
     num = integer_input(positive=True)
-    print("The {}th element of Triple Shiftian is: {}".format(num, triple_shiftian(first_three_elements, num)))
+    result = triple_shiftian(first_three_elements, num)
+    print("The {}th element of Triple Shiftian is: {}".format(num, result))
 
 
 def run_zeros():

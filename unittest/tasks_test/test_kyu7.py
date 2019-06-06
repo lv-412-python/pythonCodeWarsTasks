@@ -20,7 +20,7 @@ from tasks.kyu7 import (
     ([6, 7, 2], 2, 2)
     ])
 def test_triple_shiftian(first_three_elements, num, expected_output):
-    """Test triple_shiftian function"""
+    """Tests triple_shiftian function"""
     result = triple_shiftian(first_three_elements, num)
     assert result == expected_output
 
@@ -33,7 +33,7 @@ def test_triple_shiftian(first_three_elements, num, expected_output):
                              (-1, 12, [])
                          ])
 def test_replicate(times, number, expected_output):
-    """test replicate function"""
+    """Tests replicate function"""
     result = replicate(times, number)
     assert result == expected_output
 
@@ -44,7 +44,7 @@ def test_replicate(times, number, expected_output):
                              (4, 360)
                          ])
 def test_angle(number, expected_result):
-    """Test angle function."""
+    """Tests angle function."""
     result = angle(number)
     assert result == expected_result
 
@@ -59,8 +59,9 @@ def test_new_avg():
     with pytest.raises(ValueError):
         new_avg([14, 30, 5, 7, 9, 11, 15], 2)
 
+
 def test_series_sum():
-    """Test series_sum function """
+    """Tests series_sum function """
     assert series_sum(1) == "1.00"
     assert series_sum(2) == "1.25"
     assert series_sum(3) == "1.39"
@@ -68,3 +69,14 @@ def test_series_sum():
     with pytest.raises(TypeError) as type_err:
         assert series_sum('a') is type_err
     assert series_sum(-5) == '1.00'
+
+
+@pytest.mark.parametrize("people, bef, aft, expected_output", [
+    (3, 1, 1, 2),
+    (5, 2, 3, 3)],
+                         ids=["(3, 1, 1)_2",
+                              "(5, 2, 3)_3"])
+def test_where_is_vasya(people, bef, aft, expected_output):
+    """Tests where_is_vasya function."""
+    result = where_is_vasya(people, bef, aft)
+    assert result == expected_output
