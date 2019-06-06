@@ -24,6 +24,8 @@ def test_triple_shiftian(first_three_elements, num, expected_output):
     """Tests triple_shiftian function"""
     result = triple_shiftian(first_three_elements, num)
     assert result == expected_output
+    with pytest.raises(TypeError) as err:
+        assert triple_shiftian(-737, 'string') is err
 
 
 @pytest.mark.parametrize('times, number, expected_output',

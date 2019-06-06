@@ -21,6 +21,8 @@ def test_bouncing_ball(height, bounce, expected_output):
     """Tests bouncing_ball function"""
     result = bouncing_ball(height, bounce)
     assert result == expected_output
+    with pytest.raises(TypeError) as err:
+        assert bouncing_ball('string', 'second string') is err
 
 
 @pytest.mark.parametrize('result_sheet, to_find, expected_output',
