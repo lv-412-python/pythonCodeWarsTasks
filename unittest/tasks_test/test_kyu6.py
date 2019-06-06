@@ -22,6 +22,7 @@ def test_bouncing_ball(height, bounce, expected_output):
                               "Boston Celt:This team didn't play!")
                          ])
 def test_nba_cup(result_sheet, to_find, expected_output):
+    """test nba_cup function"""
     result = nba_cup(result_sheet, to_find)
     assert result == expected_output
 

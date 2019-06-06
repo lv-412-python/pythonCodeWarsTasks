@@ -44,7 +44,8 @@ def test_short_long_short(first, second, expected_output):
                              (["ground", "rainbow", "sky"], ["sky", "rainbow", "ground"]),
                              (["tails", "body", "heads"], ["heads", "body", "tails"])
                          ])
-def test_heads_legs(animal, expected_output):
+def test_fix_the_meerkat(animal, expected_output):
+    """ test fix_the_meerkat function"""
     result = fix_the_meerkat(animal)
     assert result == expected_output
 
@@ -56,6 +57,7 @@ def test_heads_legs(animal, expected_output):
                              ([1, 2, 3, 4, 5, 6], [1, 4, 9, 2, 25, 36])
                          ])
 def test_square_or_square_root(numbers, expected_output):
+    """ test square_or_square_root function"""
     result = square_or_square_root(numbers)
     assert result == expected_output
 
