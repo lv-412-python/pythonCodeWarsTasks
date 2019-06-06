@@ -294,21 +294,18 @@ def run_miles_per_gallon_to_kilometers_per_liter():
 
 def run_am_i_wilson():
     """Run am_i_wilson function."""
-    try:
-        number = int(input("Number: "))
-        print(am_i_wilson(number))
-    except (NameError, ValueError):
-        print("You must enter a number.")
+    print("Number = ")
+    number = integer_input()
+    print(am_i_wilson(number))
 
 
 def run_new_avg():
     """Run new_avg function."""
-    try:
-        arr = input("Array: ")
-        navg = int(input("Expected average: "))
-        print(new_avg(arr, navg))
-    except (NameError, ValueError):
-        print("You must enter a number.")
+    print("Array = ")
+    arr = integer_list_input()
+    print("Expected average = ")
+    navg = integer_input()
+    print(new_avg(arr, navg))
 
 
 def run_balance():
@@ -319,20 +316,16 @@ def run_balance():
 
 def run_smallest():
     """Run smallest function."""
-    try:
-        num = int(input("Number: "))
-        print(smallest(num))
-    except (ValueError, NameError):
-        print("You must enter a number.")
+    print("Number = ")
+    num = integer_input(positive=True)
+    print(smallest(num))
 
 
 def run_two_decimals_places():
     """Run two_decimals_places function."""
-    try:
-        number = float(input("Number: "))
-        print(two_decimal_places(number))
-    except (ValueError, NameError):
-        print("You must enter a number.")
+    print("Number = ")
+    num = float_input()
+    print(two_decimal_places(num))
 
 
 def run_abbrev_name():
