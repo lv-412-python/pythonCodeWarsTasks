@@ -1,8 +1,15 @@
 """Tests for 8kyu module"""
 
 import pytest
-from tasks.kyu8 import heads_legs
-from tasks.kyu8 import short_long_short, fix_the_meerkat, square_or_square_root
+from tasks.kyu8 import (
+    heads_legs,
+    short_long_short,
+    fix_the_meerkat,
+    square_or_square_root,
+    abbrev_name,
+    bin_to_decimal
+)
+
 
 @pytest.mark.parametrize('heads,legs,expected_output', [
     (72, 200, (44, 28)),
@@ -39,6 +46,7 @@ def test_heads_legs(animal, expected_output):
     result = fix_the_meerkat(animal)
     assert result == expected_output
 
+
 @pytest.mark.parametrize('numbers, expected_output',
                          [
                              ([4, 3, 9, 7, 2, 1], [2, 9, 3, 49, 4, 1]),
@@ -48,3 +56,32 @@ def test_heads_legs(animal, expected_output):
 def test_square_or_square_root(numbers, expected_output):
     result = square_or_square_root(numbers)
     assert result == expected_output
+
+
+@pytest.mark.parametrize('name, abbrev',
+                         [
+                             ("Sam Harris", "S.H"),
+                             ("Patrick Feenan", "P.F"),
+                             ("Evan Cole", "E.C"),
+                             ("P Favuzzi", "P.F"),
+                             ("David Mendieta", "D.M")
+                         ])
+def test_abbrev_name(name, abbrev):
+    """Test abbrev_name function."""
+    result = abbrev_name(name)
+    assert result == abbrev
+
+
+@pytest.mark.parametrize('bin_n, decimal',
+                         [
+                             ("0", 0),
+                             ("1", 1),
+                             ("10", 2),
+                             ("11", 3),
+                             ("101010", 42),
+                             ("1001001", 73)
+                         ])
+def test_bin_to_decimal(bin_n, decimal):
+    """Test bin_to_decimal function."""
+    result = bin_to_decimal(bin_n)
+    assert result == decimal

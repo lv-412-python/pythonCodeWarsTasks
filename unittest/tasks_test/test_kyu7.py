@@ -1,7 +1,9 @@
 """Tests for 7kyu module"""
 import pytest
 
-from tasks.kyu7 import triple_shiftian, replicate
+from tasks.kyu7 import triple_shiftian, replicate, angle
+
+
 @pytest.mark.parametrize('first_three_elements,num,expected_output', [
     ([1, 1, 1], 25, 1219856746),
     ([1, 2, 3], 25, 2052198929),
@@ -24,3 +26,14 @@ def test_triple_shiftian(first_three_elements, num, expected_output):
 def test_replicate(times, number, expected_output):
     result = replicate(times, number)
     assert result == expected_output
+
+
+@pytest.mark.parametrize('number, expected_result',
+                         [
+                             (3, 180),
+                             (4, 360)
+                         ])
+def test_angle(number, expected_result):
+    """Test angle function."""
+    result = angle(number)
+    assert result == expected_result
