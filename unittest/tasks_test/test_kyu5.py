@@ -17,13 +17,14 @@ from tasks.kyu5 import (
 @pytest.mark.parametrize('product, expected_output', [
     (4895, [55, 89, True]),
     (5895, [89, 144, False]),
-    ])
+])
 def test_fib_product(product, expected_output):
     """Tests fib_product function"""
     result = fib_product(product)
     assert result == expected_output
     with pytest.raises(TypeError) as err:
         assert fib_product('727') is err
+
 
 @pytest.mark.parametrize('num, expected_output',
                          [
@@ -100,10 +101,22 @@ def test_gap_in_primes_none():
     ([2], 1),
     ([1, 2, 1, 2, 1], 3),
     ([4, 2, 3, 3, 2], 4)
-    ])
+])
 def test_artificial_rain(data):
     '''Tests artificial_rain function'''
     garden, result = data
     assert artificial_rain(garden) == result
     with pytest.raises(KeyError) as key_err:
-        assert artificial_rain({1:'1', 2:'2'}) is key_err
+        assert artificial_rain({1: '1', 2: '2'}) is key_err
+
+
+@pytest.mark.parametrize('s,shift,expected_output', [
+    ('scsc scscsc scsck v 12', 2, ['ueue ', 'ueueu', 'e ueu', 'em x ', '12']),
+    ('y', 1, ['z'])
+])
+def test_moving_shift(s, shift, expected_output):
+    """Tests moving_shift function"""
+    result = moving_shift(s, shift)
+    assert result == expected_output
+    with pytest.raises(TypeError) as err:
+        assert moving_shift('', -4) is err
