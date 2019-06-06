@@ -16,8 +16,7 @@ def test_bouncing_ball(height, bounce, expected_output):
 @pytest.mark.parametrize('result_sheet, to_find, expected_output',
                          [
                              (R, "Boston Celtics",
-                              "Boston Celtics:W=4;    D=0;    L=0;    Scored=403;\
-    Conceded=350;    Points=12"),
+                              "Boston Celtics:W=4;D=0;L=0;Scored=403;Conceded=350;Points=12"),
                              (R, "Boston Celt",
                               "Boston Celt:This team didn't play!")
                          ])

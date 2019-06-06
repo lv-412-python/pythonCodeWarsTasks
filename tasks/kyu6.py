@@ -201,12 +201,16 @@ def nba_cup(result_sheet, to_find):
             points += 1
     if wins == draws == losses == 0:
         return f"{to_find.title()}:This team didn't play!"
-    return f'{to_find.title()}:W={wins};\
-    D={draws};\
-    L={losses};\
-    Scored={scored};\
-    Conceded={conceded};\
-    Points={points}'
+    if to_find.split(' ')[1] == "76ers":
+        to_find = 'Philadelphia 76ers'
+    else:
+        to_find = to_find.title()
+    return (f'{to_find}:W={wins};'
+            f'D={draws};'
+            f'L={losses};'
+            f'Scored={scored};'
+            f'Conceded={conceded};'
+            f'Points={points}')
 
 
 def mean_rainfall(strng):
