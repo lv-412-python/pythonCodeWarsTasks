@@ -32,7 +32,7 @@ def test_heads_legs(heads, legs, expected_output):
     ('U', 'False', 'UFalseU')
     ])
 def test_short_long_short(first, second, expected_output):
-    """Test head_legs function"""
+    """Test short_long_short function"""
     result = short_long_short(first, second)
     assert result == expected_output
 
