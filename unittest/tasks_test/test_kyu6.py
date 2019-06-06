@@ -42,21 +42,47 @@ def test_consonant_value(string, expected_output):
     assert result == expected_output
 
 
-STRINGS_FOR_BALANCE = [("""1242.00
-122 Hardware;! 13.6
-127 Hairdresser 13.1
-123 Fruits 93.5?;
-132 Stamps;!{ 13.6?;
-160 Pen;! 17.6?;
-002 Car;! 34.00""", "Original Balance: 1242.00\n122 Hardware 13.60 Balance 1228.40\n127 Hairdresser\
- 13.10 Balance 1215.30\n123 Fruits 93.50 Balance 1121.80\n132 Stamps 13.60 Balance 1108.20\n160 Pen 17.60 \
- Balance 1090.60\n002 Car 34.00 Balance 1056.60\nTotal expense  185.40\nAverage expense  30.90"),
-                       ("""963.0
-131 Books 12.2
-139 Gasoline 120.90
-002 Hardware;! 71.4?;""", "Original Balance: 963.00\n131 Books \
- 12.20 Balance 950.80\n139 Gasoline 120.90 Balance 829.90\n002 Hardware 71.40 Balance 758.50\nTotal expense  204.50\n\
- Average expense  68.17")]
+STRINGS_FOR_BALANCE = [("""1000.00!=
+
+125 Market !=:125.45
+126 Hardware =34.95
+127 Video! 7.45
+128 Book :14.32
+129 Gasoline ::16.10
+""", """Original Balance: 1000.00\r
+125 Market 125.45 Balance 874.55\r
+126 Hardware 34.95 Balance 839.60\r
+127 Video 7.45 Balance 832.15\r
+128 Book 14.32 Balance 817.83\r
+129 Gasoline 16.10 Balance 801.73\r
+Total expense  198.27\r
+Average expense  39.65"""), ("""1233.00
+125 Hardware;! 24.8?;
+123 Flowers 93.5
+127 Meat 120.90
+120 Picture 34.00
+124 Gasoline 11.00
+123 Photos;! 71.4?;
+122 Picture 93.5
+132 Tyres;! 19.00,?;
+129 Stamps 13.6
+129 Fruits{} 17.6
+129 Market;! 128.00?;
+121 Gasoline;! 13.6?;""",  """Original Balance: 1233.00\r
+125 Hardware 24.80 Balance 1208.20\r
+123 Flowers 93.50 Balance 1114.70\r
+127 Meat 120.90 Balance 993.80\r
+120 Picture 34.00 Balance 959.80\r
+124 Gasoline 11.00 Balance 948.80\r
+123 Photos 71.40 Balance 877.40\r
+122 Picture 93.50 Balance 783.90\r
+132 Tyres 19.00 Balance 764.90\r
+129 Stamps 13.60 Balance 751.30\r
+129 Fruits 17.60 Balance 733.70\r
+129 Market 128.00 Balance 605.70\r
+121 Gasoline 13.60 Balance 592.10\r
+Total expense  640.90\r
+Average expense  53.41""")]
 
 
 @pytest.mark.parametrize("parameter", STRINGS_FOR_BALANCE)
