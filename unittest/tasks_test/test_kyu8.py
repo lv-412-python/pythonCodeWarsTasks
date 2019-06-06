@@ -28,7 +28,7 @@ from tasks.kyu8 import (
     (116, 282, (91, 25)),
     (12, 24, (12, 0)),
     (5, 5, "No solutions.")
-    ])
+])
 def test_heads_legs(heads, legs, expected_output):
     """Tests head_legs function"""
     result = heads_legs(heads, legs)
@@ -36,12 +36,13 @@ def test_heads_legs(heads, legs, expected_output):
     with pytest.raises(TypeError) as err:
         assert heads_legs('five', 'ten') is err
 
+
 @pytest.mark.parametrize('first,second,expected_output', [
     ('45', '1', '1451'),
     ('13', '200', '1320013'),
     ('Soon', 'Me', 'MeSoonMe'),
     ('U', 'False', 'UFalseU')
-    ])
+])
 def test_short_long_short(first, second, expected_output):
     """Tests short_long_short function"""
     result = short_long_short(first, second)
@@ -132,6 +133,7 @@ def test_divisible_by():
     with pytest.raises(ZeroDivisionError) as zero_div:
         assert divisible_by([1, 2, 3, 4, 5, 6], 0) is zero_div
 
+
 def test_circle_area():
     """Test circle_area function"""
     assert round(circle_area(Circle(Point(10, 10), 30)), 6) == 2827.433388
@@ -178,7 +180,7 @@ def test_miles_per_gallon_to_kilometers_per_liter(miles_per_gallon, expected_out
     (11.8, 5),
     (1787, 893),
     (0, 0)
-    ])
+])
 def test_litres(data):
     '''test litres function'''
     time, amount_litres = data
@@ -193,10 +195,36 @@ def test_litres(data):
     (1.22, 8.27),
     (2.13, 11.85),
     (1.75, 10.36)
-    ])
+])
 def test_starting_mark(data):
     '''test starting_mark function'''
     height, result = data
     assert starting_mark(height) == result
     with pytest.raises(TypeError) as type_err:
         assert starting_mark('qwerty') is type_err
+
+
+@pytest.mark.parametrize('username, expected_output',
+                         [
+                             ('', False),
+                             ('____', True),
+                             ('099', False),
+                             ('hh66', True),
+                             ('hh 66', False)
+                         ])
+def test_validate_usr(username, expected_output):
+    """test validate_usr function"""
+    result = validate_usr(username)
+    assert result == expected_output
+
+
+@pytest.mark.parametrize('price,discount,holiday_cost,expected_output', [
+    (12, 50, 1000, 166),
+    (17, 10, 500, 500)
+])
+def test_duty_free(price, discount, holiday_cost, expected_output):
+    """Tests duty_free function"""
+    result = duty_free(price, discount, holiday_cost)
+    assert result == expected_output
+    with pytest.raises(TypeError) as err:
+        assert duty_free(-4, -4, -4) is err

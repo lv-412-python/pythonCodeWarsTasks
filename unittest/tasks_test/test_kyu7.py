@@ -19,7 +19,7 @@ from tasks.kyu7 import (
     ([1, 2, 3], 25, 2052198929),
     ([6, 7, 2], 25, -2575238999),
     ([6, 7, 2], 2, 2)
-    ])
+])
 def test_triple_shiftian(first_three_elements, num, expected_output):
     """Tests triple_shiftian function"""
     result = triple_shiftian(first_three_elements, num)
@@ -100,11 +100,25 @@ def test_where_is_vasya(people, bef, aft, expected_output):
     (2, 2, 1, 2),
     (1, 15, 3, 35),
     (15, 1, 3, 0)
-    ])
-
+])
 def test_sequence_sum(data):
     '''Tests sequence_sum function'''
     begin_number, end_number, step, result = data
     assert sequence_sum(begin_number, end_number, step) == result
     with pytest.raises(TypeError) as type_err:
         assert sequence_sum(1.23, 'asd', (1, 2)) is type_err
+
+
+@pytest.mark.parametrize('number, expected_output',
+                         [
+                             (7, 3432),
+                             (13, 10400600),
+                             (17, 2333606220),
+                             (19, 35345263800)
+                         ])
+def test_sum_of_square(number, expected_output):
+    """test sum_of_square function"""
+    result = sum_of_square(number)
+    assert result == expected_output
+    with pytest.raises(TypeError) as type_err:
+        assert sum_of_square(-77) is type_err

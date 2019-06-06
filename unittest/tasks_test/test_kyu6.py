@@ -16,7 +16,7 @@ from tasks.kyu6 import (
 @pytest.mark.parametrize('height, bounce, expected_output', [
     (3, 0.66, 3),
     (30, 0.66, 15),
-    ])
+])
 def test_bouncing_ball(height, bounce, expected_output):
     """Tests bouncing_ball function"""
     result = bouncing_ball(height, bounce)
@@ -38,7 +38,6 @@ def test_nba_cup(result_sheet, to_find, expected_output):
     assert result == expected_output
     with pytest.raises(AttributeError) as attr_error:
         assert nba_cup(2, 1) is attr_error
-
 
 
 @pytest.mark.parametrize('string, expected_output',
@@ -106,6 +105,7 @@ def test_balance(parameter):
     string, result = parameter
     assert balance(string) == result
 
+
 def test_find_nb():
     """Test find_nb function"""
     assert find_nb(4183059834009) == 2022
@@ -128,7 +128,7 @@ def test_variance_rainfall(city, strng, expected_output):
     result = variance_rainfall(city, strng)
     assert pytest.approx(result, 1e-6) == expected_output
     with pytest.raises(AttributeError) as attr_err:
-        assert variance_rainfall((1, 1), (2,3)) is attr_err
+        assert variance_rainfall((1, 1), (2, 3)) is attr_err
 
 
 @pytest.mark.parametrize('data', [
@@ -136,10 +136,23 @@ def test_variance_rainfall(city, strng, expected_output):
     (1.4e-09, 6.999999997549999e-10),
     (5.0e-06, 2.499996875007813e-06),
     (2.4e-07, 1.1999999280000087e-07)
-    ])
+])
 def test_approximation(data):
     '''Tests approximation function'''
     num, result = data
     assert approximation(num) == result
     with pytest.raises(TypeError) as type_err:
         assert approximation((1, 2)) is type_err
+
+
+@pytest.mark.parametrize('f, l, u, n, expected_output', [
+    ('x -> x', 0.0, 0.9, 3, [0.0, 0.3, 0.6]),
+    ('x -> x', 0.0, 0.9, 4, [0.0, 0.22, 0.45, 0.67]),
+    ('x -> sin x', 0.0, 0.9, 3, [0.0, 0.3, 0.6])
+])
+def test_interp(f, l, u, n, expected_output):
+    """Tests interp function"""
+    result = interp(f, l, u, n)
+    assert result == expected_output
+    with pytest.raises(TypeError) as err:
+        assert interp('', -4, -4, -7) is err
