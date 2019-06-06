@@ -33,7 +33,8 @@ def test_heads_legs(heads, legs, expected_output):
     """Tests head_legs function"""
     result = heads_legs(heads, legs)
     assert result == expected_output
-
+    with pytest.raises(TypeError) as err:
+        assert heads_legs('five', 'ten') is err
 
 @pytest.mark.parametrize('first,second,expected_output', [
     ('45', '1', '1451'),
@@ -45,6 +46,8 @@ def test_short_long_short(first, second, expected_output):
     """Tests short_long_short function"""
     result = short_long_short(first, second)
     assert result == expected_output
+    with pytest.raises(TypeError) as err:
+        assert short_long_short(-737, 'string') is err
 
 
 @pytest.mark.parametrize('animal,expected_output',

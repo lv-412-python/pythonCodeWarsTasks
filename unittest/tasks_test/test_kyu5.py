@@ -23,7 +23,8 @@ def test_fib_product(product, expected_output):
     """Tests fib_product function"""
     result = fib_product(product)
     assert result == expected_output
-
+    with pytest.raises(TypeError) as err:
+        assert fib_product('727') is err
 
 @pytest.mark.parametrize('num, expected_output',
                          [
