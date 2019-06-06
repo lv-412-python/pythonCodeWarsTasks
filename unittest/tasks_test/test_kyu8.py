@@ -58,6 +58,8 @@ def test_fix_the_meerkat(animal, expected_output):
     """Tests fix_the_meerkat function"""
     result = fix_the_meerkat(animal)
     assert result == expected_output
+    with pytest.raises(TypeError) as type_error:
+        assert fix_the_meerkat(12) is type_error
 
 
 @pytest.mark.parametrize('numbers, expected_output',
@@ -70,6 +72,8 @@ def test_square_or_square_root(numbers, expected_output):
     """Tests square_or_square_root function"""
     result = square_or_square_root(numbers)
     assert result == expected_output
+    with pytest.raises(TypeError) as type_error:
+        assert square_or_square_root("hello") is type_error
 
 
 @pytest.mark.parametrize('name, abbrev',

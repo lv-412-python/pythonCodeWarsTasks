@@ -34,6 +34,8 @@ def test_zeros(num, expected_output):
     """Tests zeros function"""
     result = zeros(num)
     assert result == expected_output
+    with pytest.raises(TypeError) as type_error:
+        assert zeros("str") is type_error
 
 
 @pytest.mark.parametrize('number, expected_output',
