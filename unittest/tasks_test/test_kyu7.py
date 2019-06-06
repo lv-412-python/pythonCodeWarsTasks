@@ -24,6 +24,7 @@ def test_triple_shiftian(first_three_elements, num, expected_output):
                              (-1, 12, [])
                          ])
 def test_replicate(times, number, expected_output):
+    """test replicate function"""
     result = replicate(times, number)
     assert result == expected_output
 

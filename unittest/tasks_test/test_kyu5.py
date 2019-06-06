@@ -21,6 +21,7 @@ def test_fib_product(product, expected_output):
                              (30, 7)
                          ])
 def test_zeros(num, expected_output):
+    """test zeros function"""
     result = zeros(num)
     assert result == expected_output
 
