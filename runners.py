@@ -316,8 +316,11 @@ def run_new_avg():
 
 def run_balance():
     """Run balance function."""
-    book = input("Book: ")
-    print(balance(book))
+    try:
+        book = input("Book: ")
+        print(balance(book))
+    except ValueError:
+        print("You should enter a correct receipt.")
 
 
 def run_smallest():
